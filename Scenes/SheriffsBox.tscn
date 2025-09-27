@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxfrad2436ma1"]
+
+[ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
+[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_30kxj"]
+[ext_resource type="PackedScene" uid="uid://dj8do0uhqhcxq" path="res://Scenes/GameObjects/NPC.tscn" id="3_flahs"]
+[ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
+
+[node name="SheriffsBox" type="Node2D"]
+
+[node name="DocumentsManager" type="Node2D" parent="."]
+script = ExtResource("1_ppcta")
+
+[node name="Document" parent="DocumentsManager" instance=ExtResource("2_30kxj")]
+position = Vector2(426, 347)
+
+[node name="Document2" parent="DocumentsManager" instance=ExtResource("2_30kxj")]
+position = Vector2(426, 347)
+
+[node name="NPC" parent="." instance=ExtResource("3_flahs")]
+position = Vector2(124, 157)
+
+[node name="Dialog" parent="." instance=ExtResource("4_ttg44")]
+visible = false
+position = Vector2(635, 600)

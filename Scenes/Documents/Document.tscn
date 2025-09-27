@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlugjvnb2qlfd"]
+
+[ext_resource type="Texture2D" uid="uid://bctndym4fl6tb" path="res://icon.svg" id="1_r04q1"]
+[ext_resource type="Script" uid="uid://2ybou16gxnoj" path="res://Scripts/GameObjects/Document.gd" id="1_y06vf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y06vf"]
+size = Vector2(126, 128.57143)
+
+[node name="Document" type="Node2D"]
+script = ExtResource("1_y06vf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.70541155, 0.44815576, 0.1061013, 1)
+scale = Vector2(1, 0.35)
+texture = ExtResource("1_r04q1")
+
+[node name="DocumentArea" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DocumentArea"]
+position = Vector2(0, -1.4285715)
+shape = SubResource("RectangleShape2D_y06vf")
+
+[connection signal="mouse_entered" from="Sprite2D/DocumentArea" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="Sprite2D/DocumentArea" to="." method="OnMouseExited"]
