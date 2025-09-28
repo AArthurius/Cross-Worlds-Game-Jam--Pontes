@@ -2,11 +2,11 @@ extends RichTextLabel
 
 @onready var showCharacter: Timer = $ShowCharacter
 
-var dialog:Array = []
+var dialog: Array = []
+var currentNPC: Area2D
 
 func _ready() -> void:
-	print(showCharacter)
-	print($ShowCharacter)
+	pass
 
 func _process(delta: float) -> void:
 	if visible:
@@ -14,12 +14,13 @@ func _process(delta: float) -> void:
 			ShowMessage()
 
 func ShowMessage() -> void:
-	if visible_characters != get_total_character_count() and !showCharacter.is_stopped():
+	if visible_characters != get_total_character_count() && get_total_character_count() > 0:
 		visible_characters = get_total_character_count()
 		return
 	if dialog.size() == 0:
 		$".".visible = false
 		showCharacter.stop()
+		currentNPC.Animator.play("Exiting")
 		return
 	visible = true
 	var MSG = dialog.pop_front()

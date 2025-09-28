@@ -1,20 +1,95 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj8do0uhqhcxq"]
+[gd_scene load_steps=8 format=3 uid="uid://dj8do0uhqhcxq"]
 
 [ext_resource type="Script" uid="uid://msuxf5dotjtq" path="res://Scripts/GameObjects/NPC.gd" id="1_ryh40"]
 [ext_resource type="Texture2D" uid="uid://bctndym4fl6tb" path="res://icon.svg" id="1_yx4i6"]
-[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/Resources/NPCAtributes.gd" id="2_kpujj"]
-
-[sub_resource type="Resource" id="Resource_cp627"]
-script = ExtResource("2_kpujj")
-documents = [null]
-metadata/_custom_type_script = "uid://cx857svlxoj7x"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx4i6"]
 size = Vector2(128, 128)
 
+[sub_resource type="Animation" id="Animation_kpujj"]
+resource_name = "Comming"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(640, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"StartDialog"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_cp627"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3mk35"]
+resource_name = "Exiting"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 0), Vector2(1280, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mk35"]
+_data = {
+&"Comming": SubResource("Animation_kpujj"),
+&"Exiting": SubResource("Animation_3mk35"),
+&"RESET": SubResource("Animation_cp627")
+}
+
 [node name="NPC" type="Area2D"]
 script = ExtResource("1_ryh40")
-atributes = SubResource("Resource_cp627")
 metadata/_custom_type_script = "uid://msuxf5dotjtq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,3 +99,6 @@ texture = ExtResource("1_yx4i6")
 shape = SubResource("RectangleShape2D_yx4i6")
 
 [node name="NPCAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3mk35")
+}

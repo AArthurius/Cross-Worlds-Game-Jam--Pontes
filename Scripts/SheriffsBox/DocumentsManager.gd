@@ -1,5 +1,5 @@
 extends Node2D
 
-func DragDocument(Document: Node2D) -> void:
-	Document.global_position = get_local_mouse_position()
-	move_child(Document, get_child_count() - 1)
+func DragDocument(document: Node2D) -> void:
+	document.global_position = get_local_mouse_position() + position
+	move_child(document, get_child_count() - 1)

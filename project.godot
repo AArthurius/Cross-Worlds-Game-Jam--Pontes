@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://dauk8xj0r8drk"
 
+[autoload]
+
+GameManager="*res://Scripts/Globals/GameManager.gd"
+
 [display]
 
 window/size/viewport_width=1280

@@ -1,23 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxfrad2436ma1"]
+[gd_scene load_steps=6 format=3 uid="uid://cxfrad2436ma1"]
 
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
 [ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_30kxj"]
 [ext_resource type="PackedScene" uid="uid://dj8do0uhqhcxq" path="res://Scenes/GameObjects/NPC.tscn" id="3_flahs"]
+[ext_resource type="Resource" uid="uid://cm2ixj80m5iwl" path="res://Scripts/Resources/NPC1.tres" id="4_hh3na"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
 
 [node name="SheriffsBox" type="Node2D"]
 
 [node name="DocumentsManager" type="Node2D" parent="."]
+position = Vector2(640, 200)
 script = ExtResource("1_ppcta")
 
 [node name="Document" parent="DocumentsManager" instance=ExtResource("2_30kxj")]
-position = Vector2(426, 347)
+position = Vector2(206, 217)
 
 [node name="Document2" parent="DocumentsManager" instance=ExtResource("2_30kxj")]
-position = Vector2(426, 347)
+position = Vector2(-38, 249)
 
-[node name="NPC" parent="." instance=ExtResource("3_flahs")]
-position = Vector2(124, 157)
+[node name="NPCGenerator" type="Node2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="NPC" parent="NPCGenerator" instance=ExtResource("3_flahs")]
+atributes = ExtResource("4_hh3na")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
