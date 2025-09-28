@@ -1,24 +1,16 @@
-extends Node2D
+extends Area2D
+class_name NPC
 
-class NPC:
-	var Name: String
-	var Dialog: Array
-	var NumberOfDocuments: int
-	var Documents: Array
-	var CanAcross: bool
-
-var NPCAtributes: NPC
-
+@export var atributes: NPCAtributes
 @onready var Animator = $NPCAnimator as AnimationPlayer
-var GameDocuments: Array = ["res://Scenes/Documents/Document.tscn"]
+@onready var dialogBox: RichTextLabel = $"../UI/Dialog"
 
-@onready var DialogBox: Node2D = $"../Dialog"
+var GameDocuments: Array = ["res://Scenes/Documents/Document.tscn"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DialogBox.Dialog = ["Teste", "teste2", "teste3"]
-	DialogBox.visible = true
-	DialogBox.ShowMessage()
+	dialogBox.dialog = ["Teste", "teste2", "teste3"]
+	dialogBox.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

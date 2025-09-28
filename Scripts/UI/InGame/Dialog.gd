@@ -1,6 +1,12 @@
-extends Node2D
+extends RichTextLabel
 
-var Dialog: Array
+@onready var showCharacter: Timer = $ShowCharacter
+
+var dialog:Array = []
+
+func _ready() -> void:
+	print(showCharacter)
+	print($ShowCharacter)
 
 func _process(delta: float) -> void:
 	if visible:
@@ -8,20 +14,21 @@ func _process(delta: float) -> void:
 			ShowMessage()
 
 func ShowMessage() -> void:
-	if $Text.visible_characters != $Text.get_total_character_count():
-		$Text.visible_characters = $Text.get_total_character_count()
+	if visible_characters != get_total_character_count() and !showCharacter.is_stopped():
+		visible_characters = get_total_character_count()
 		return
-	if Dialog.size() == 0:
+	if dialog.size() == 0:
 		$".".visible = false
+		showCharacter.stop()
 		return
 	visible = true
-	var MSG = Dialog.pop_front()
-	$Text.visible_characters = 0
-	$Text.text = MSG
-	$ShowCharacter.start()
+	var MSG = dialog.pop_front()
+	visible_characters = 0
+	text = MSG
+	showCharacter.start()
 
 func ShowCharacter() -> void:
-	if $Text.visible_characters == $Text.get_total_character_count():
+	if visible_characters == get_total_character_count():
+		showCharacter.stop()
 		return
-	$Text.visible_characters += 1
-	$ShowCharacter.start()
+	visible_characters += 1

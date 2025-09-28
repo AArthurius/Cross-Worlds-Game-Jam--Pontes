@@ -1,18 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhukukuvoevyi"]
 
 [ext_resource type="Script" uid="uid://dnp8fjbnqdjl5" path="res://Scripts/UI/InGame/Dialog.gd" id="1_8dqk5"]
-[ext_resource type="Texture2D" uid="uid://bctndym4fl6tb" path="res://icon.svg" id="2_184ve"]
 
-[node name="Dialog" type="Node2D"]
-script = ExtResource("1_8dqk5")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_184ve"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[node name="DialogBox" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-0.49993753, 1.5000015)
-scale = Vector2(9.210938, 1.2109375)
-texture = ExtResource("2_184ve")
-
-[node name="Text" type="RichTextLabel" parent="."]
+[node name="Text" type="RichTextLabel"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -24,8 +25,11 @@ offset_right = 575.0
 offset_bottom = 72.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
-visible_characters = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_184ve")
+scroll_active = false
+script = ExtResource("1_8dqk5")
 
 [node name="ShowCharacter" type="Timer" parent="."]
 wait_time = 0.05
