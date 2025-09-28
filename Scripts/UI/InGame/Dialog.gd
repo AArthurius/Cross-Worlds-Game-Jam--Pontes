@@ -20,13 +20,16 @@ func ShowMessage() -> void:
 	if dialog.size() == 0:
 		$".".visible = false
 		showCharacter.stop()
-		currentNPC.Animator.play("Exiting")
 		return
 	visible = true
 	var MSG = dialog.pop_front()
+	GameManager.dialogCurrentMessage = MSG
 	visible_characters = 0
 	text = MSG
 	showCharacter.start()
+	
+	if MSG == "Here are my documents.":
+		currentNPC.DropDocuments()
 
 func ShowCharacter() -> void:
 	if visible_characters == get_total_character_count():
