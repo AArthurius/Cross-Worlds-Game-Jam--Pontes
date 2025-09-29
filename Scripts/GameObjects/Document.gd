@@ -1,13 +1,13 @@
-extends Node2D
+extends Area2D
 class_name Document
 
 @onready var Animator: AnimationPlayer = $Animator
 var MouseEntered: bool = false
 var isOnNPCArea: bool = false
-		
+
 func _ready() -> void:
 	Animator.play("Drop")
-		
+
 func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) && MouseEntered && !GameManager.isDraggingADocument:
 		get_parent().DragDocument($".")
@@ -30,3 +30,9 @@ func AreaEntered(area: Area2D) -> void:
 func AreaExited(area: Area2D) -> void:
 	if area.is_in_group("NPC"):
 		isOnNPCArea = false
+
+func _on_mouse_entered() -> void:
+	pass # Replace with function body.
+
+func _on_mouse_exited() -> void:
+	pass # Replace with function body.

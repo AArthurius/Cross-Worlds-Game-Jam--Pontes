@@ -4,9 +4,7 @@ extends RichTextLabel
 
 var dialog: Array = []
 var currentNPC: Area2D
-
-func _ready() -> void:
-	pass
+@onready var gameManager: Node2D = $"../.."
 
 func _process(delta: float) -> void:
 	if visible:
@@ -20,6 +18,7 @@ func ShowMessage() -> void:
 	if dialog.size() == 0:
 		$".".visible = false
 		showCharacter.stop()
+		gameManager.NPCShowDocuments()
 		return
 	visible = true
 	var MSG = dialog.pop_front()
@@ -27,9 +26,6 @@ func ShowMessage() -> void:
 	visible_characters = 0
 	text = MSG
 	showCharacter.start()
-	
-	if MSG == "Here are my documents.":
-		currentNPC.DropDocuments()
 
 func ShowCharacter() -> void:
 	if visible_characters == get_total_character_count():

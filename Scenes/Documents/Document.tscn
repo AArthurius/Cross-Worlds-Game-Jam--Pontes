@@ -67,27 +67,26 @@ _data = {
 &"RESET": SubResource("Animation_842n5")
 }
 
-[node name="Document" type="Node2D" groups=["Document"]]
+[node name="Document" type="Area2D" groups=["Document"]]
 script = ExtResource("1_y06vf")
 metadata/_custom_type_script = "uid://2ybou16gxnoj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.50000006)
+scale = Vector2(1, 0.35000002)
+shape = SubResource("RectangleShape2D_y06vf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.70541155, 0.44815576, 0.1061013, 1)
 scale = Vector2(1, 0.35)
 texture = ExtResource("1_r04q1")
 
-[node name="DocumentArea" type="Area2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DocumentArea"]
-position = Vector2(0, -1.4285715)
-shape = SubResource("RectangleShape2D_y06vf")
-
 [node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_jfrbr")
 }
 
-[connection signal="area_entered" from="Sprite2D/DocumentArea" to="." method="AreaEntered"]
-[connection signal="area_exited" from="Sprite2D/DocumentArea" to="." method="AreaExited"]
-[connection signal="mouse_entered" from="Sprite2D/DocumentArea" to="." method="OnMouseEntered"]
-[connection signal="mouse_exited" from="Sprite2D/DocumentArea" to="." method="OnMouseExited"]
+[connection signal="area_entered" from="." to="." method="AreaEntered"]
+[connection signal="area_exited" from="." to="." method="AreaExited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -10,9 +10,10 @@ func _ready() -> void:
 	sprite_2d.texture = atributes.NPCTexture
 	animator.play("Coming")
 
-func StartDialog():
-	dialogBox
+func NextMSG():
+	dialogBox.dialog = atributes.dialog
+	dialogBox.ShowMessage()
 
 func npc_animator_finished(anim_name: StringName) -> void:
 	if anim_name == "Coming":
-		StartDialog()
+		NextMSG()
