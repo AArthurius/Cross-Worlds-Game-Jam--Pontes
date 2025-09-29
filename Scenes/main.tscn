@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://3o1b3o2tyyeg"]
+
+[ext_resource type="PackedScene" uid="uid://bbb5yqnbfmg13" path="res://Assets/Placeholder/Barraco.fbx" id="1_jjgbg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_top_color = Color(0.8447803, 0.6040062, 0.15166488, 1)
+sky_horizon_color = Color(1.069738, 0.98307145, 0.82146513, 1)
+ground_bottom_color = Color(0.388615, 0.28272286, 0.088638864, 1)
+ground_horizon_color = Color(1.069738, 0.98307145, 0.82146513, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7u77a"]
+size = Vector2(18.72, 22.135)
+
+[node name="Main" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(285, 160)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9999997, 0.99064714, 0.8664836, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6256773, 3.8808684)
+fov = 83.74934
+
+[node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Chão" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
+mesh = SubResource("PlaneMesh_7u77a")
+
+[node name="Barraco" parent="SubViewportContainer/SubViewport/Environment" instance=ExtResource("1_jjgbg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.586, 3.642)
