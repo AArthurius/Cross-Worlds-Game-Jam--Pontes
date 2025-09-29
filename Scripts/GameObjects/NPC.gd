@@ -2,26 +2,18 @@ extends Area2D
 class_name NPC
 
 @export var atributes: NPCAtributes
-@onready var Animator = $NPCAnimator as AnimationPlayer
-@onready var dialogBox: RichTextLabel = $"../../UI/Dialog"
+@onready var animator: AnimationPlayer = $NPCAnimator
+@onready var dialogBox: RichTextLabel = $"../../../UI/Dialog"
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Animator.play("Comming")
+	sprite_2d.texture = atributes.NPCTexture
+	animator.play("Coming")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if $"../../DocumentsManager".get_child_count() == 0 && !Animator.is_playing() && !dialogBox.visible:
-		Animator.play("Exiting")
-	
-func StartDialog():
+func NextMSG():
 	dialogBox.dialog = atributes.dialog
-	dialogBox.visible = true
 	dialogBox.ShowMessage()
-	dialogBox.currentNPC = $"."
 
-func DropDocuments():
-	for documents in atributes.documents:
-		var documentPath = load(documents.get_path())
-		var document = documentPath.instantiate()
-		$"../../DocumentsManager".add_child(document)
+func npc_animator_finished(anim_name: StringName) -> void:
+	if anim_name == "Coming":
+		NextMSG()

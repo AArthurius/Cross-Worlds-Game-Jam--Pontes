@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://eqietaws314b"]
+
+[ext_resource type="Texture2D" uid="uid://bonqhw8qwgqn1" path="res://Assets/NPCs/maligna.png" id="1_y4un3"]
+[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_7a3x5"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/Resources/NPCAtributes.gd" id="3_kt1ph"]
+
+[resource]
+script = ExtResource("3_kt1ph")
+npcName = "Helena Cowboy da Silva"
+NPCTexture = ExtResource("1_y4un3")
+dialog = ["Hello, I came to kill the sheriff's wife", "Here are my documents."]
+documents = [ExtResource("2_7a3x5")]
+metadata/_custom_type_script = "uid://cx857svlxoj7x"
