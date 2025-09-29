@@ -30,9 +30,3 @@ func AreaEntered(area: Area2D) -> void:
 func AreaExited(area: Area2D) -> void:
 	if area.is_in_group("NPC"):
 		isOnNPCArea = false
-
-func _on_mouse_entered() -> void:
-	pass # Replace with function body.
-
-func _on_mouse_exited() -> void:
-	pass # Replace with function body.

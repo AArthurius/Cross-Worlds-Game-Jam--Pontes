@@ -3,7 +3,7 @@ extends RichTextLabel
 @onready var showCharacter: Timer = $ShowCharacter
 
 var dialog: Array = []
-var currentNPC: Area2D
+var currentNPC: NPC
 @onready var gameManager: Node2D = $"../.."
 
 func _process(delta: float) -> void:
