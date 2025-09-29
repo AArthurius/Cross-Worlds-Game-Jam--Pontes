@@ -1,7 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=18 format=3 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Assets/edge_detection.gdshader" id="1_bo1nx"]
+[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bbb5yqnbfmg13" path="res://Assets/Placeholder/Barraco.fbx" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dj8do0uhqhcxq" path="res://Scenes/GameObjects/NPC.tscn" id="3_21xkr"]
+[ext_resource type="Texture2D" uid="uid://bonqhw8qwgqn1" path="res://Assets/NPCs/maligna.png" id="5_6bp64"]
+[ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="5_344ge"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/Resources/NPCAtributes.gd" id="5_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://bjtxt4yl8c80p" path="res://Assets/Placeholder/sino.png" id="6_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="6_ynf5e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.8447803, 0.6040062, 0.15166488, 1)
@@ -33,12 +40,23 @@ shader_parameter/lineShadow = 0.55
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+normal_enabled = true
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_7u77a"]
-size = Vector2(18.72, 22.135)
+material = SubResource("StandardMaterial3D_bo1nx")
+size = Vector2(500, 5000)
+
+[sub_resource type="Resource" id="Resource_hptm8"]
+script = ExtResource("5_ynf5e")
+NPCTexture = ExtResource("5_6bp64")
+metadata/_custom_type_script = "uid://cx857svlxoj7x"
 
 [node name="Main" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,7 +66,9 @@ stretch = true
 stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(285, 160)
+render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -74,3 +94,52 @@ mesh = SubResource("PlaneMesh_7u77a")
 
 [node name="Barraco" parent="SubViewportContainer/SubViewport/Environment" instance=ExtResource("1_jjgbg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.586, 3.642)
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("3_6bp64")
+
+[node name="NPC Spawn Area" type="Control" parent="GameManager"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 206.0
+offset_top = 114.0
+offset_right = 364.0
+offset_bottom = 202.0
+
+[node name="NPCGenerator" type="Node2D" parent="GameManager/NPC Spawn Area"]
+
+[node name="NPC" parent="GameManager/NPC Spawn Area/NPCGenerator" instance=ExtResource("3_21xkr")]
+atributes = SubResource("Resource_hptm8")
+
+[node name="NPCAnimator" parent="GameManager/NPC Spawn Area/NPCGenerator/NPC" index="2"]
+autoplay = "Coming"
+
+[node name="DocumentsManager" type="Node2D" parent="GameManager"]
+script = ExtResource("5_344ge")
+
+[node name="Campainha" type="TextureButton" parent="GameManager"]
+offset_left = 394.0
+offset_top = 227.0
+offset_right = 442.0
+offset_bottom = 275.0
+texture_normal = ExtResource("6_6bp64")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UI" type="CanvasLayer" parent="GameManager"]
+
+[node name="Dialog" parent="GameManager/UI" instance=ExtResource("6_ynf5e")]
+visible = false
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -319.0
+offset_right = 284.0
+offset_bottom = -246.0
+grow_vertical = 0
+
+[connection signal="pressed" from="GameManager/Campainha" to="GameManager" method="nextNPC"]
+
+[editable path="GameManager/NPC Spawn Area/NPCGenerator/NPC"]
