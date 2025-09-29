@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=9 format=3 uid="uid://3o1b3o2tyyeg"]
 
+[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Assets/edge_detection.gdshader" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bbb5yqnbfmg13" path="res://Assets/Placeholder/Barraco.fbx" id="1_jjgbg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -13,10 +14,24 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
+background_energy_multiplier = 1.5
 sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gbba"]
+render_priority = 0
+shader = ExtResource("1_bo1nx")
+shader_parameter/lightIntensity = 1.25
+shader_parameter/lineAlpha = 0.7
+shader_parameter/useLighting = true
+shader_parameter/lineHighlight = 0.2
+shader_parameter/lineShadow = 0.55
+
+[sub_resource type="QuadMesh" id="QuadMesh_jjvhh"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7u77a"]
 size = Vector2(18.72, 22.135)
@@ -46,6 +61,11 @@ environment = SubResource("Environment_0xm2m")
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6256773, 3.8808684)
 fov = 83.74934
+
+[node name="Shader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+material_override = SubResource("ShaderMaterial_8gbba")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_jjvhh")
 
 [node name="Environment" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
