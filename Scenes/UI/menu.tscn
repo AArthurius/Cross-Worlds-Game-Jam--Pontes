@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr7ehv1ydug2m"]
+
+[ext_resource type="Script" uid="uid://cfirvoupapu6q" path="res://Scripts/UI/menu.gd" id="1_uk6bn"]
+[ext_resource type="FontFile" uid="uid://kgyrxw65774f" path="res://PixelOperator.ttf" id="2_wuk0b"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uk6bn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -142.0
+offset_right = 74.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.365)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wuk0b")
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="Config" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.365)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wuk0b")
+theme_override_font_sizes/font_size = 48
+text = "Config"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.365)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wuk0b")
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Config" to="." method="Config_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="Exit_pressed"]

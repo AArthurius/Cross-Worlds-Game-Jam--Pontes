@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhukukuvoevyi"]
+[gd_scene load_steps=4 format=3 uid="uid://dhukukuvoevyi"]
 
 [ext_resource type="Script" uid="uid://dnp8fjbnqdjl5" path="res://Scripts/UI/InGame/Dialog.gd" id="1_8dqk5"]
+[ext_resource type="FontFile" uid="uid://kgyrxw65774f" path="res://PixelOperator.ttf" id="1_184ve"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_184ve"]
 content_margin_left = 6.0
@@ -26,7 +27,8 @@ offset_bottom = 72.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 24
+theme_override_fonts/normal_font = ExtResource("1_184ve")
+theme_override_font_sizes/normal_font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_184ve")
 scroll_active = false
 script = ExtResource("1_8dqk5")
