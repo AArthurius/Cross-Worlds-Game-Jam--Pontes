@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhrv0js72gnae"]
+
+[ext_resource type="Texture2D" uid="uid://c2sd5eapfqit2" path="res://Assets/NPCs/Julian Duque Thompson.png" id="1_f5txd"]
+[ext_resource type="Script" uid="uid://by61xgei1q7kv" path="res://Scripts/ResourcesScripts/Documents/NPCPersonalDocument.gd" id="2_5pjxa"]
+
+[resource]
+script = ExtResource("2_5pjxa")
+npcProfileImage = ExtResource("1_f5txd")
+npcName = "Julian Duque Thompson"
+npcAge = 41
+npcCountry = 1

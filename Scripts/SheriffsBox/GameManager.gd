@@ -6,7 +6,7 @@ extends Node2D
 
 const NPCScene: PackedScene = preload("uid://dj8do0uhqhcxq")
 
-var NPCs: Array = [preload("uid://eqietaws314b")]
+var NPCs: Array = [preload("uid://eqietaws314b"), preload("uid://bv7qp4ik0rxp4"), preload("uid://djb0dasiq3tyn"),preload("uid://bsmdlqgnjug86")]
 
 func nextNPC():
 	if npcGenerator.get_child_count() > 0:
