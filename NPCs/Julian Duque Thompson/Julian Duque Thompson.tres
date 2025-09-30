@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://bv7qp4ik0rxp4"]
+
+[ext_resource type="Texture2D" uid="uid://c2sd5eapfqit2" path="res://Assets/NPCs/Julian Duque Thompson.png" id="1_8phu3"]
+[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_gg7as"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_uhejp"]
+
+[resource]
+script = ExtResource("3_uhejp")
+npcName = "Julian Duque Thompson"
+NPCTexture = ExtResource("1_8phu3")
+dialog = ["Hello, call me Duque, I was called by the citadel government for a meeting.", "Please, be fast, I don't have too much time left.", "Here are my documents."]
+documents = [ExtResource("2_gg7as")]

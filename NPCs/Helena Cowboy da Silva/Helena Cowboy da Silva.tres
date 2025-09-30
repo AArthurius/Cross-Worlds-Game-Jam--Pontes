@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://eqietaws314b"]
 
-[ext_resource type="Texture2D" uid="uid://bonqhw8qwgqn1" path="res://Assets/NPCs/Helena Cowboy da Silva.png" id="1_qyb4s"]
+[ext_resource type="Texture2D" uid="uid://tj7pws7k5r2d" path="res://Assets/NPCs/Helena Cowboy da Silva.png" id="1_qyb4s"]
 [ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_ydhqc"]
 [ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_fqgg6"]
 
