@@ -1,4 +1,5 @@
 extends Resource
+class_name NPCID
 
 enum CitadelWorks {None, Saloon, Sheriff, Hotel, Prison_Government, Bridge}
 enum Countries {Brazil, United_Kingdoom, Germany, Portugal}

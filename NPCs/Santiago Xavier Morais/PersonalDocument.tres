@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bi1dab40d7vgf"]
 
 [ext_resource type="Texture2D" uid="uid://ddtn6fx7j3bb8" path="res://Assets/NPCs/Santiago Xavier Morais.png" id="1_lji3k"]
-[ext_resource type="Script" uid="uid://by61xgei1q7kv" path="res://Scripts/ResourcesScripts/Documents/NPCPersonalDocument.gd" id="2_ypk2l"]
+[ext_resource type="Script" uid="uid://by61xgei1q7kv" path="res://Scripts/ResourcesScripts/Documents/NPCID.gd" id="2_ypk2l"]
 
 [resource]
 script = ExtResource("2_ypk2l")

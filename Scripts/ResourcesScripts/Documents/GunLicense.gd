@@ -1,4 +1,5 @@
 extends Resource
+class_name GunLicense
 
 enum GunsTypes {Fire}
 

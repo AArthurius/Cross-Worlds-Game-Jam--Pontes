@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlugjvnb2qlfd"]
+[gd_scene load_steps=6 format=3 uid="uid://dlugjvnb2qlfd"]
 
-[ext_resource type="Texture2D" uid="uid://bctndym4fl6tb" path="res://icon.svg" id="1_r04q1"]
 [ext_resource type="Script" uid="uid://2ybou16gxnoj" path="res://Scripts/GameObjects/Document.gd" id="1_y06vf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y06vf"]
-size = Vector2(51, 57.142853)
+size = Vector2(187, 345.7143)
 
 [sub_resource type="Animation" id="Animation_y06vf"]
 resource_name = "Drop"
@@ -70,11 +69,6 @@ _data = {
 [node name="Document" type="Area2D" groups=["Document"]]
 script = ExtResource("1_y06vf")
 metadata/_custom_type_script = "uid://2ybou16gxnoj"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.70541155, 0.44815576, 0.1061013, 1)
-scale = Vector2(0.4, 0.15)
-texture = ExtResource("1_r04q1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.35000002)

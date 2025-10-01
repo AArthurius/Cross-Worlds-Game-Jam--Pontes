@@ -2,6 +2,7 @@ extends Area2D
 class_name Document
 
 @onready var Animator: AnimationPlayer = $Animator
+
 var MouseEntered: bool = false
 var isOnNPCArea: bool = false
 
