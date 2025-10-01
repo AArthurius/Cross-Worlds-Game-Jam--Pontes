@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://cr4yydj1rh0uw"]
 
 [ext_resource type="Texture2D" uid="uid://chadxtnf7u5kx" path="res://Assets/NPCs/Rose Whitmore Monroe.png" id="1_xk5qd"]
-[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_1d4jb"]
+[ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_1d4jb"]
 [ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="2_qgq2h"]
 
 [resource]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
+[ext_resource type="Texture2D" uid="uid://dlbv1mlkx085w" path="res://Assets/Cartaz_de_Procurado_V2.png" id="2_hh3na"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
 
@@ -1234,10 +1235,8 @@ albedo_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
 material = SubResource("StandardMaterial3D_bo1nx")
 size = Vector2(500, 5000)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ttg44"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jqrf"]
-albedo_texture = SubResource("CompressedTexture2D_ttg44")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7w5ej"]
+albedo_texture = ExtResource("2_hh3na")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bnppw"]
 size = Vector2(0.4, 0.6)
@@ -1626,7 +1625,7 @@ mesh = SubResource("PlaneMesh_7u77a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.2434433, 1.7451342, 2.5066817)
-material_override = SubResource("StandardMaterial3D_8jqrf")
+material_override = SubResource("StandardMaterial3D_7w5ej")
 mesh = SubResource("PlaneMesh_bnppw")
 
 [node name="Campainha suporte" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
