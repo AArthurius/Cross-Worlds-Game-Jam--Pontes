@@ -1,0 +1,219 @@
+[gd_scene load_steps=11 format=3 uid="uid://fah7kcn8pdob"]
+
+[ext_resource type="Script" uid="uid://ci85tg76cadrh" path="res://Scripts/Documents/IDDoc.gd" id="1_2ffw7"]
+[ext_resource type="Texture2D" uid="uid://o8ecggl4a6ia" path="res://Assets/Documentos/id_card vazio.png" id="2_qr3e8"]
+[ext_resource type="Script" uid="uid://by61xgei1q7kv" path="res://Scripts/ResourcesScripts/Documents/NPCID.gd" id="2_s21xi"]
+[ext_resource type="Texture2D" uid="uid://xqevycmyhsxx" path="res://Assets/NPCs/Default.png" id="3_s21xi"]
+[ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="5_s21xi"]
+
+[sub_resource type="Resource" id="Resource_s21xi"]
+script = ExtResource("2_s21xi")
+metadata/_custom_type_script = "uid://by61xgei1q7kv"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbx48"]
+size = Vector2(187, 345.7143)
+
+[sub_resource type="Animation" id="Animation_y06vf"]
+resource_name = "Drop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.25, 0.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_842n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jfrbr"]
+_data = {
+&"Drop": SubResource("Animation_y06vf"),
+&"RESET": SubResource("Animation_842n5")
+}
+
+[node name="ID Document" type="Area2D" groups=["Document"]]
+script = ExtResource("1_2ffw7")
+atributes = SubResource("Resource_s21xi")
+metadata/_custom_type_script = "uid://2ybou16gxnoj"
+
+[node name="Document Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_qr3e8")
+
+[node name="Area Foto" type="Control" parent="Document Sprite"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -87.0
+offset_top = -34.0
+offset_right = -35.0
+offset_bottom = 28.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Foto NPC" type="Sprite2D" parent="Document Sprite/Area Foto"]
+position = Vector2(26, 30)
+texture = ExtResource("3_s21xi")
+
+[node name="Dados" type="Control" parent="Document Sprite"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -61.0
+offset_right = -94.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nome Label" type="RichTextLabel" parent="Document Sprite/Dados"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 97.0
+offset_right = 185.0
+offset_bottom = 113.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "Nome:"
+fit_content = true
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Document Sprite/Dados"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 24.0
+offset_right = 115.0
+offset_bottom = 90.0
+theme_override_constants/separation = 9
+
+[node name="País Label" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "Country:
+"
+fit_content = true
+scroll_active = false
+
+[node name="País" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/País Label"]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 124.0
+offset_bottom = 16.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Idade Label" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "Age:"
+fit_content = true
+scroll_active = false
+
+[node name="Idade" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/Idade Label"]
+layout_mode = 0
+offset_left = 26.965
+offset_right = 124.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Emprego Label" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "Job:"
+fit_content = true
+scroll_active = false
+
+[node name="Emprego" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/Emprego Label"]
+clip_contents = false
+layout_mode = 0
+offset_left = 26.0
+offset_right = 123.0
+offset_bottom = 16.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "
+"
+fit_content = true
+scroll_active = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.35)
+shape = SubResource("RectangleShape2D_jbx48")
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jfrbr")
+}
+
+[node name="Drag" type="Button" parent="."]
+offset_left = -95.0
+offset_top = -61.0
+offset_right = 94.0
+offset_bottom = 62.0
+focus_mode = 0
+flat = true
+
+[connection signal="area_entered" from="." to="." method="AreaEntered"]
+[connection signal="area_exited" from="." to="." method="AreaExited"]
+[connection signal="button_down" from="Drag" to="." method="OnButtonDown"]
+[connection signal="button_up" from="Drag" to="." method="OnButtonUp"]

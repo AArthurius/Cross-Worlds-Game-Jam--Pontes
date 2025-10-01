@@ -1,15 +1,19 @@
 extends Area2D
 class_name NPC
 
-var atributes: NPCAtributes
 @onready var animator: AnimationPlayer = $NPCAnimator
 @onready var dialogBox: RichTextLabel = $"../../../UI/Dialog"
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
 @onready var documentsTable: Node2D = $"../../../DocumentsManager"
+@onready var spriteChapeu: Sprite2D = $"Sprite2D/Sprite Chapeu"
+var atributes: NPCAtributes
 
 func _ready() -> void:
 	sprite_2d.texture = atributes.NPCTexture
+	var chapeuRand = randi_range(0, 100)
+	if chapeuRand < 40:
+		spriteChapeu.visible = true
+	
 	animator.play("Coming")
 
 func _process(delta: float) -> void:
