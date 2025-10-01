@@ -26,7 +26,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
+"values": [Vector2(0, 0), Vector2(0.25, 0.25)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,7 +74,7 @@ _data = {
 &"RESET": SubResource("Animation_842n5")
 }
 
-[node name="ID Document" type="Area2D"]
+[node name="ID Document" type="Area2D" groups=["Document"]]
 script = ExtResource("1_2ffw7")
 atributes = SubResource("Resource_s21xi")
 metadata/_custom_type_script = "uid://2ybou16gxnoj"
@@ -197,10 +197,23 @@ fit_content = true
 scroll_active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 0.35000002)
+scale = Vector2(1, 0.35)
 shape = SubResource("RectangleShape2D_jbx48")
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_jfrbr")
 }
+
+[node name="Drag" type="Button" parent="."]
+offset_left = -95.0
+offset_top = -61.0
+offset_right = 94.0
+offset_bottom = 62.0
+focus_mode = 0
+flat = true
+
+[connection signal="area_entered" from="." to="." method="AreaEntered"]
+[connection signal="area_exited" from="." to="." method="AreaExited"]
+[connection signal="button_down" from="Drag" to="." method="OnButtonDown"]
+[connection signal="button_up" from="Drag" to="." method="OnButtonUp"]

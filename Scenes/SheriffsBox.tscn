@@ -1,6 +1,6 @@
 [gd_scene load_steps=125 format=4 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
+[ext_resource type="Shader" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]

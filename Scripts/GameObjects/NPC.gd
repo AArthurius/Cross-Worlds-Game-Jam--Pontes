@@ -1,7 +1,6 @@
 extends Area2D
 class_name NPC
 
-
 @onready var animator: AnimationPlayer = $NPCAnimator
 @onready var dialogBox: RichTextLabel = $"../../../UI/Dialog"
 @onready var sprite_2d: Sprite2D = $Sprite2D
