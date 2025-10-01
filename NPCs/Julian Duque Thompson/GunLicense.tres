@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b82mhtm5ys4sn"]
+
+[ext_resource type="Script" uid="uid://bmcgfj5bf3i6s" path="res://Scripts/ResourcesScripts/Documents/GunLicense.gd" id="1_ktq34"]
+
+[resource]
+script = ExtResource("1_ktq34")
+Validaty = "00.00.00"
+Number = "L85A2"
+bearerCountry = 1

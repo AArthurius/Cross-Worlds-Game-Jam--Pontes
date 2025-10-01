@@ -8,4 +8,4 @@ script = ExtResource("1_2cpw3")
 npcProfileImage = ExtResource("1_0mpr3")
 npcName = "Helena Cowboy da Silva"
 npcAge = 26
-npcCountry = "Brazil"
+npcSex = 1

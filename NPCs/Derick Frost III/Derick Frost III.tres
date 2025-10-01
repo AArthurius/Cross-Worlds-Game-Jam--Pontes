@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://bpp0t332yfokm"]
+
+[ext_resource type="Texture2D" uid="uid://bs2hxkh48eefl" path="res://Assets/NPCs/Derick Frost III.png" id="1_ulsh7"]
+[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_i1tg8"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_ywln3"]
+
+[resource]
+script = ExtResource("3_ywln3")
+npcName = "Derick Frost III"
+NPCTexture = ExtResource("1_ulsh7")
+dialog = ["Hello, I'm Derick and I came to talk with the forger, my horse lost its hourseshoes.", "I'll also sharpen my spear, its tip is dull.", "Here are my documents."]
+documents = [ExtResource("2_i1tg8"), ExtResource("2_i1tg8")]

@@ -8,5 +8,6 @@ script = ExtResource("2_d7g8g")
 npcProfileImage = ExtResource("1_k5rdd")
 npcName = "Mary Lindovan Fischer"
 npcAge = 34
+npcSex = 1
 npcCountry = 2
 npcCitadelWork = 1
