@@ -1,4 +1,5 @@
 extends Resource
+class_name GunLicense
 
 enum GunsTypes {Fire, Melee}
 enum Countries {Brazil, United_Kingdoom, Germany, Portugal, Canada, United_States, England}
