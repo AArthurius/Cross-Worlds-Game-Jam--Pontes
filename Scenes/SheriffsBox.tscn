@@ -1235,7 +1235,6 @@ material = SubResource("StandardMaterial3D_bo1nx")
 size = Vector2(500, 5000)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ttg44"]
-load_path = "res://.godot/imported/Cartaz.png-6c48ba666f4b5b27c25e73ccf14bda86.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jqrf"]
 albedo_texture = SubResource("CompressedTexture2D_ttg44")
@@ -1690,13 +1689,5 @@ offset_top = -319.0
 offset_right = 284.0
 offset_bottom = -246.0
 grow_vertical = 0
-
-[node name="Control" type="Control" parent="GameManager"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 203.0
-offset_top = 121.0
-offset_right = 346.0
-offset_bottom = 217.0
 
 [connection signal="pressed" from="GameManager/Campainha" to="GameManager" method="nextNPC"]

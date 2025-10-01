@@ -9,3 +9,17 @@ enum Countries {Brazil, United_Kingdoom, Germany, Portugal}
 @export var npcAge: int
 @export var npcCountry: Countries
 @export var npcCitadelWork: CitadelWorks
+
+
+func assignAtributes(atributes: NPCAtributes):
+	npcProfileImage = atributes.NPCTexture
+	npcName = atributes.npcName
+	npcAge = atributes.npcAge
+	npcCountry = atributes.npcCountry
+	npcCitadelWork = atributes.npcCitadelWork
+
+func getCountryName() -> String:
+	return Countries.keys()[npcCountry]
+
+func getWorkName() -> String:
+	return CitadelWorks.keys()[npcCitadelWork]

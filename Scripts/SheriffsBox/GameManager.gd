@@ -23,11 +23,7 @@ func nextNPC():
 func NPCShowDocuments():
 	var documents: Array = currentNPC.atributes.documents
 	for doc in documents:
-		var document = doc.instantiate()
-		if doc.atributes is NPCID:
-			doc.npcprofileImage = currentNPC.NPCTexture
-			doc.npcName = currentNPC.npcName
-			doc.npcAge = currentNPC.npcAge
-			doc.npcCountry = currentNPC.npcCountry
-			doc.npcCitadelWork = currentNPC.npcCitadelWork
-		documentsManager.add_child(document)
+		var docInst = doc.instantiate()
+		if docInst.atributes is NPCID:
+			docInst.atributes.assignAtributes(currentNPC.atributes)
+		documentsManager.add_child(docInst)

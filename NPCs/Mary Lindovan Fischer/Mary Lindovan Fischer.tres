@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://djb0dasiq3tyn"]
 
 [ext_resource type="Texture2D" uid="uid://mny1doien6ru" path="res://Assets/NPCs/Mary Lindovan Fischer.png" id="1_uuucm"]
-[ext_resource type="PackedScene" uid="uid://dlugjvnb2qlfd" path="res://Scenes/Documents/Document.tscn" id="2_loelq"]
+[ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_loelq"]
 [ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="2_u7soy"]
 
 [resource]
