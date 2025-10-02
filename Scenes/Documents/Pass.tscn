@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4miyjth67lhb"]
+
+[ext_resource type="Script" uid="uid://dwqa2iihof7gt" path="res://Scripts/Documents/pass.gd" id="1_w8tko"]
+[ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="2_ligqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns7t3"]
+size = Vector2(188, 122)
+
+[node name="Pass" type="Area2D" groups=["pass"]]
+script = ExtResource("1_w8tko")
+metadata/_custom_type_script = "uid://81bf1i2n7vc1"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ligqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ns7t3")
+
+[node name="Drag" type="Button" parent="."]
+offset_left = -94.0
+offset_top = -61.0
+offset_right = 94.0
+offset_bottom = 61.0
+focus_mode = 0
+flat = true
+
+[connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]

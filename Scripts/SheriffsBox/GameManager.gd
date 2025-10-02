@@ -3,7 +3,7 @@ extends Node2D
 @onready var npcGenerator: Node2D = $"NPC Spawn Area/NPCGenerator"
 @onready var documentsManager: Node2D = $DocumentsManager
 @onready var dialogBox: RichTextLabel = $"UI/Dialog"
-@onready var animator: AnimationPlayer = $Campainha/Animator
+@onready var animator: AnimationPlayer = $"Item Interact/Animator"
 
 const NPCScene: PackedScene = preload("uid://dj8do0uhqhcxq")
 var currentNPC = null
@@ -27,4 +27,6 @@ func NPCShowDocuments():
 		var docInst = doc.instantiate()
 		if docInst.atributes is NPCID:
 			docInst.atributes.assignAtributes(currentNPC.atributes)
+			docInst.ownerNPC = currentNPC
 		documentsManager.add_child(docInst)
+		documentsManager.dropDocument(docInst)

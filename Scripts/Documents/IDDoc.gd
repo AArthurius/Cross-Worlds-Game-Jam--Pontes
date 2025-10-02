@@ -8,13 +8,14 @@ class_name Document
 @onready var país: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/País Label/País"
 @onready var idade: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/Idade Label/Idade"
 @onready var emprego: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/Emprego Label/Emprego"
-@onready var Animator: AnimationPlayer = $Animator
+@onready var spriteCover: Sprite2D = $"Sprite Cover"
 
 var ownerAtributes: NPCAtributes
-
+var ownerNPC:NPC
 var MouseEntered: bool = false
 var isOnNPCArea: bool = false
 var isDragging: bool = false
+var zoomed:bool = false
 
 func _ready() -> void:
 	fotoNPC.texture = atributes.npcProfileImage
@@ -22,24 +23,29 @@ func _ready() -> void:
 	idade.text = str(atributes.npcAge)
 	país.text = atributes.getCountryName()
 	emprego.text = atributes.getWorkName()
-	Animator.play("Drop")
 
 func _process(delta: float) -> void:
 	if isDragging:
 		get_parent().DragDocument($".")
 		GameManager.isDraggingADocument = true
 	else: 
+		if position.y <= 80:
+			position.y += 4
 		GameManager.isDraggingADocument = false
-		if isOnNPCArea && !Animator.is_playing() && !isDragging:
+		if isOnNPCArea and (ownerNPC.accepted or ownerNPC.denied):
 			GameManager.isDraggingADocument = false
 			queue_free()
 
 func OnButtonDown() -> void:
 	if !GameManager.isDraggingADocument:
 		isDragging = true
+		spriteCover.visible = false
+		scale = Vector2(1,1)
 
 func OnButtonUp() -> void:
 	isDragging = false
+	spriteCover.visible = true
+	scale = Vector2(0.2,0.2)
 
 func AreaEntered(area: Area2D) -> void:
 	if area.is_in_group("NPC"):

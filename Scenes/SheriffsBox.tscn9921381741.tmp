@@ -1990,7 +1990,7 @@ position = Vector2(-109, 64)
 position = Vector2(-86, 64)
 
 [node name="Document Spot4" type="Marker2D" parent="GameManager/Document Spots"]
-position = Vector2(18, 80)
+position = Vector2(-63, 64)
 
 [node name="DocumentsManager" type="Node2D" parent="GameManager"]
 position = Vector2(285, 200)
@@ -2025,9 +2025,9 @@ libraries = {
 
 [node name="Stamp 1 Button" type="Button" parent="GameManager/Item Interact"]
 layout_mode = 0
-offset_left = 355.0
-offset_top = 241.0
-offset_right = 381.0
+offset_left = 359.0
+offset_top = 251.0
+offset_right = 377.0
 offset_bottom = 264.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -2035,9 +2035,9 @@ flat = true
 
 [node name="Stamp 2 Button" type="Button" parent="GameManager/Item Interact"]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 223.0
-offset_right = 399.0
+offset_left = 388.0
+offset_top = 248.0
+offset_right = 396.0
 offset_bottom = 264.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -2045,8 +2045,8 @@ flat = true
 
 [node name="Stamp 3 Button" type="Button" parent="GameManager/Item Interact"]
 layout_mode = 0
-offset_left = 403.0
-offset_top = 216.0
+offset_left = 409.0
+offset_top = 236.0
 offset_right = 419.0
 offset_bottom = 265.0
 focus_mode = 0
@@ -2054,13 +2054,11 @@ mouse_default_cursor_shape = 2
 flat = true
 
 [node name="PassSpawner" type="Button" parent="GameManager/Item Interact"]
-z_index = -1
 layout_mode = 0
 offset_left = -3.0
-offset_top = 287.0
+offset_top = 278.0
 offset_right = 185.0
-offset_bottom = 357.0
-focus_mode = 0
+offset_bottom = 348.0
 mouse_default_cursor_shape = 2
 flat = true
 script = ExtResource("5_8jqrf")
@@ -2125,7 +2123,6 @@ grow_vertical = 0
 [connection signal="mouse_entered" from="GameManager/Item Interact/Stamp 3 Button" to="GameManager/Item Interact" method="Stamp_3_button_mouse_entered"]
 [connection signal="mouse_exited" from="GameManager/Item Interact/Stamp 3 Button" to="GameManager/Item Interact" method="Stamp_3_button_mouse_exited"]
 [connection signal="pressed" from="GameManager/Item Interact/Stamp 3 Button" to="GameManager/Item Interact" method="Stamp_3_button_pressed"]
-[connection signal="button_down" from="GameManager/Item Interact/PassSpawner" to="GameManager/Item Interact/PassSpawner" method="_on_button_down"]
 [connection signal="mouse_entered" from="GameManager/Item Interact/PassSpawner" to="GameManager/Item Interact/PassSpawner" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="GameManager/Item Interact/Campainha" to="GameManager/Item Interact" method="_on_campainha_mouse_entered"]
 [connection signal="mouse_exited" from="GameManager/Item Interact/Campainha" to="GameManager/Item Interact" method="_on_campainha_mouse_exited"]
