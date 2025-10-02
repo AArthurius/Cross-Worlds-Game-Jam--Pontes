@@ -1,14 +1,13 @@
-[gd_scene load_steps=136 format=4 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=135 format=4 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
+[ext_resource type="Shader" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
 [ext_resource type="Texture2D" uid="uid://bsfc3852lu70g" path="res://Assets/Props texturas/Mapa_da_Cidade_-_Normal.png" id="2_cme50"]
-[ext_resource type="Texture2D" uid="uid://dlbv1mlkx085w" path="res://Assets/Props texturas/Cartaz_de_Procurado_V2.png" id="2_hh3na"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
 [ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
 [ext_resource type="Script" uid="uid://dq16fvhgnupnx" path="res://Scripts/SheriffsBox/passSpawner.gd" id="5_8jqrf"]
-[ext_resource type="Script" uid="uid://bbv4eobb504rp" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
+[ext_resource type="Script" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7w5ej"]
 sky_top_color = Color(0.8447803, 0.6040062, 0.15166488, 1)
@@ -1109,7 +1108,6 @@ material = SubResource("StandardMaterial3D_bo1nx")
 size = Vector2(500, 5000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7w5ej"]
-albedo_texture = ExtResource("2_hh3na")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bnppw"]
 size = Vector2(0.4, 0.6)

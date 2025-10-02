@@ -18,6 +18,7 @@ func nextNPC():
 	var character = NPCScene.instantiate()
 	character.atributes = NPCs[randi_range(0, NPCs.size() - 1)].duplicate(true)
 	dialogBox.currentNPC = character
+	character.canAcross = true if randi_range(0, 1) == 0 else false
 	npcGenerator.add_child(character)
 	currentNPC = character
 
@@ -26,7 +27,7 @@ func NPCShowDocuments():
 	for doc in documents:
 		var docInst = doc.instantiate()
 		if docInst.atributes is NPCID:
-			docInst.atributes.assignAtributes(currentNPC.atributes)
+			docInst.atributes.assignAtributes(currentNPC.atributes, currentNPC.canAcross)
 			docInst.ownerNPC = currentNPC
 		documentsManager.add_child(docInst)
 		documentsManager.dropDocument(docInst)

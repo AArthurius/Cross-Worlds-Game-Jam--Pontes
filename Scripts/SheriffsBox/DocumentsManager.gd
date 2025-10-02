@@ -4,11 +4,6 @@ extends Node2D
 @onready var carimbo2: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Pequeno"
 @onready var carimbo3: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Grande"
 
-@onready var documentSpot: Marker2D = $"../Document Spots/Document Spot"
-@onready var documentSpot2: Marker2D = $"../Document Spots/Document Spot2"
-@onready var documentSpot3: Marker2D = $"../Document Spots/Document Spot3"
-@onready var documentSpot4: Marker2D = $"../Document Spots/Document Spot4"
-
 var spot1Free = true
 var spot2Free = true
 var spot3Free = true

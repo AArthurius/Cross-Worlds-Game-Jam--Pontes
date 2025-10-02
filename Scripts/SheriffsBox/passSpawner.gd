@@ -4,7 +4,7 @@ extends Button
 @onready var animator: AnimationPlayer = $Animator
 @onready var documentsManager: Node2D = $"../../DocumentsManager"
 
-const PASS = preload("uid://c4miyjth67lhb")
+const PASS = preload("res://Scenes/Documents/Pass.tscn")
 
 
 func _on_mouse_entered() -> void:

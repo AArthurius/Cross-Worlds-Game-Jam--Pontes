@@ -11,6 +11,8 @@ var atributes: NPCAtributes
 var accepted:bool = false
 var denied:bool = false
 
+var canAcross: bool
+
 func _ready() -> void:
 	sprite_2d.texture = atributes.NPCTexture
 	var chapeuRand = randi_range(0, 100)
