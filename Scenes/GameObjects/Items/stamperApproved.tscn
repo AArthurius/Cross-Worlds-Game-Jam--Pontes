@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3788yhknvdyc"]
+
+[ext_resource type="Script" uid="uid://pmq84pgvmg33" path="res://Scripts/GameObjects/stamper.gd" id="1_jm0hx"]
+[ext_resource type="Texture2D" uid="uid://dq17ax7m6ukjq" path="res://Assets/Ferramentas/Stamper.png" id="2_hq2j7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5xaq"]
+radius = 27.0
+
+[node name="Stamper Approved" type="Area2D"]
+script = ExtResource("1_jm0hx")
+approveStamp = true
+metadata/_custom_type_script = "uid://81bf1i2n7vc1"
+
+[node name="Drag" type="Button" parent="."]
+offset_left = -40.0
+offset_top = -44.0
+offset_right = 35.0
+offset_bottom = 44.0
+focus_mode = 0
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hq2j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 26)
+shape = SubResource("CircleShape2D_l5xaq")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-11, 26)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]

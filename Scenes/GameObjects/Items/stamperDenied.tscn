@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3qvbnjvp8t0t"]
 
-[ext_resource type="Script" uid="uid://81bf1i2n7vc1" path="res://Scripts/Itens/items.gd" id="1_mcpy1"]
-[ext_resource type="Texture2D" uid="uid://cvjf41uk6ospv" path="res://Assets/Ferramentas/Stamper quadrado.png" id="2_1t5rt"]
+[ext_resource type="Script" uid="uid://pmq84pgvmg33" path="res://Scripts/GameObjects/stamper.gd" id="1_jgx4p"]
+[ext_resource type="Texture2D" uid="uid://cvjf41uk6ospv" path="res://Assets/Ferramentas/Stamper quadrado.png" id="2_fxuga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w72m"]
 size = Vector2(142, 48)
 
 [node name="Stamper Denied" type="Area2D"]
-visible = false
-script = ExtResource("1_mcpy1")
+script = ExtResource("1_jgx4p")
 metadata/_custom_type_script = "uid://81bf1i2n7vc1"
 
 [node name="Drag" type="Button" parent="."]
@@ -20,10 +19,14 @@ focus_mode = 0
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1t5rt")
+texture = ExtResource("2_fxuga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1w72m")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]

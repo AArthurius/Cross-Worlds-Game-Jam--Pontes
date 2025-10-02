@@ -20,3 +20,8 @@ func _on_drag_button_down() -> void:
 
 func _on_drag_button_up() -> void:
 	isDragging = false
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			_on_drag_button_up()
