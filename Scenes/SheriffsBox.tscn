@@ -1,6 +1,6 @@
 [gd_scene load_steps=134 format=4 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
+[ext_resource type="Shader" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
 [ext_resource type="Texture2D" uid="uid://dlbv1mlkx085w" path="res://Assets/Cartaz_de_Procurado_V2.png" id="2_hh3na"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
@@ -1346,6 +1346,34 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ggaas")
 
+[sub_resource type="Animation" id="Animation_hjsyq"]
+resource_name = "Campainha"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Campainha suporte/Campainha/Campainha botão:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.065185905, 0), Vector3(0, 0.04903519, 0), Vector3(0, 0.065185905, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Campainha suporte/Campainha:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.26179942), Vector3(0, 0, -0.26179937), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ytita"]
 length = 0.001
 tracks/0/type = "value"
@@ -1445,6 +1473,34 @@ tracks/7/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bnppw"]
+resource_name = "stamp 1"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5974331, 0.9573581, 2.6486807), Vector3(0.63053405, 1.0171292, 2.598324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-8.742278e-08, 8.940696e-08, -3.1415927), Vector3(-0.39793506, -0.31066862, -3.1415927)]
+}
+
 [sub_resource type="Animation" id="Animation_xh40l"]
 resource_name = "stamp 2"
 length = 0.3
@@ -1501,62 +1557,6 @@ tracks/1/keys = {
 "values": [Vector3(-8.742277e-08, -8.742278e-08, -3.1415927), Vector3(-0.3010692, -0.7634188, -3.1403189)]
 }
 
-[sub_resource type="Animation" id="Animation_bnppw"]
-resource_name = "stamp 1"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.5974331, 0.9573581, 2.6486807), Vector3(0.63053405, 1.0171292, 2.598324)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-8.742278e-08, 8.940696e-08, -3.1415927), Vector3(-0.39793506, -0.31066862, -3.1415927)]
-}
-
-[sub_resource type="Animation" id="Animation_hjsyq"]
-resource_name = "Campainha"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Campainha suporte/Campainha/Campainha botão:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.065185905, 0), Vector3(0, 0.04903519, 0), Vector3(0, 0.065185905, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../SubViewportContainer/SubViewport/Environment/Campainha suporte/Campainha:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.26179942), Vector3(0, 0, -0.26179937), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3urat"]
 _data = {
 &"Campainha": SubResource("Animation_hjsyq"),
@@ -1564,6 +1564,46 @@ _data = {
 &"stamp 1": SubResource("Animation_bnppw"),
 &"stamp 2": SubResource("Animation_xh40l"),
 &"stamp 3": SubResource("Animation_ptoxg")
+}
+
+[sub_resource type="Animation" id="Animation_3urat"]
+resource_name = "PassShake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -17), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 19), Vector2(1, 2), Vector2(1, 19)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 41), Vector2(1, 24), Vector2(1, 41)]
 }
 
 [sub_resource type="Animation" id="Animation_cme50"]
@@ -1669,46 +1709,6 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 41)]
-}
-
-[sub_resource type="Animation" id="Animation_3urat"]
-resource_name = "PassShake"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -17), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 19), Vector2(1, 2), Vector2(1, 19)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 41), Vector2(1, 24), Vector2(1, 41)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cme50"]
@@ -2018,7 +2018,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_3urat")
 }
 
-[node name="Animator" type="AnimationPlayer" parent="GameManager/Item Interact"]
+[node name="Animator Campainha" type="AnimationPlayer" parent="GameManager/Item Interact"]
 libraries = {
 &"": SubResource("AnimationLibrary_3urat")
 }

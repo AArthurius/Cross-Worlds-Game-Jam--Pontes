@@ -7,6 +7,8 @@
 [resource]
 script = ExtResource("3_vwuh1")
 npcName = "Santiago Xavier Morais"
+npcAge = 27
+npcCountry = 3
 NPCTexture = ExtResource("1_bd5pp")
 dialog = ["Please, let me cross the bridge.", "I need a safe place to stay and to treat these injuries.", "Here are my documents."]
 documents = [ExtResource("2_bd5pp")]

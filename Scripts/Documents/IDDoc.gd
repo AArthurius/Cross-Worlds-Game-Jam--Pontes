@@ -7,6 +7,7 @@ class_name Document
 @onready var nome: RichTextLabel = $"Document Sprite/Dados/Nome Label"
 @onready var país: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/País Label/País"
 @onready var idade: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/Idade Label/Idade"
+@onready var sexo: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/Sexo Label/Sexo"
 @onready var emprego: RichTextLabel = $"Document Sprite/Dados/VBoxContainer/Emprego Label/Emprego"
 @onready var spriteCover: Sprite2D = $"Sprite Cover"
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 	fotoNPC.texture = atributes.npcProfileImage
 	nome.text = atributes.npcName
 	idade.text = str(atributes.npcAge)
+	sexo.text = atributes.getSex()
 	país.text = atributes.getCountryName()
 	emprego.text = atributes.getWorkName()
 
@@ -40,12 +42,13 @@ func OnButtonDown() -> void:
 	if !GameManager.isDraggingADocument:
 		isDragging = true
 		spriteCover.visible = false
-		scale = Vector2(1,1)
+		scale = Vector2(0.8,0.8)
 
 func OnButtonUp() -> void:
 	isDragging = false
 	spriteCover.visible = true
-	scale = Vector2(0.2,0.2)
+	scale = Vector2(0.25, 0.25)
+	position.x = get_global_mouse_position().x - 285.0
 
 func AreaEntered(area: Area2D) -> void:
 	if area.is_in_group("NPC"):

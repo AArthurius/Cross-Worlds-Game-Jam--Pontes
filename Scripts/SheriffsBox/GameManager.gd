@@ -3,7 +3,7 @@ extends Node2D
 @onready var npcGenerator: Node2D = $"NPC Spawn Area/NPCGenerator"
 @onready var documentsManager: Node2D = $DocumentsManager
 @onready var dialogBox: RichTextLabel = $"UI/Dialog"
-@onready var animator: AnimationPlayer = $"Item Interact/Animator"
+@onready var animator: AnimationPlayer = $"Item Interact/Animator Campainha"
 
 const NPCScene: PackedScene = preload("uid://dj8do0uhqhcxq")
 var currentNPC = null

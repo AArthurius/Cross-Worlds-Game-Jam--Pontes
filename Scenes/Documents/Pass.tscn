@@ -11,9 +11,11 @@ script = ExtResource("1_w8tko")
 metadata/_custom_type_script = "uid://81bf1i2n7vc1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ligqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ns7t3")
 
 [node name="Drag" type="Button" parent="."]

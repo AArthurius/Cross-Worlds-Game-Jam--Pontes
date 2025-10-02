@@ -7,6 +7,9 @@
 [resource]
 script = ExtResource("3_c7mlg")
 npcName = "Clarice Wagner Sterling"
+npcAge = 32
+npcSex = 1
+npcCountry = 4
 NPCTexture = ExtResource("1_ljk6o")
 dialog = ["... Hello... I came to visit the saloon drink and listen some songs.", "Here are my documents."]
 documents = [ExtResource("2_ljk6o")]

@@ -58,7 +58,7 @@ offset_bottom = 113.0
 theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
 theme_override_fonts/normal_font = ExtResource("5_s21xi")
 theme_override_font_sizes/normal_font_size = 16
-text = "Nome:"
+text = "Name:"
 fit_content = true
 scroll_active = false
 
@@ -68,7 +68,7 @@ offset_left = 62.0
 offset_top = 24.0
 offset_right = 115.0
 offset_bottom = 90.0
-theme_override_constants/separation = 9
+theme_override_constants/separation = 1
 
 [node name="País Label" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer"]
 clip_contents = false
@@ -103,6 +103,27 @@ fit_content = true
 scroll_active = false
 
 [node name="Idade" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/Idade Label"]
+layout_mode = 0
+offset_left = 26.965
+offset_right = 124.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Sexo Label" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("5_s21xi")
+theme_override_font_sizes/normal_font_size = 16
+text = "Sex:"
+fit_content = true
+scroll_active = false
+
+[node name="Sexo" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/Sexo Label"]
 layout_mode = 0
 offset_left = 26.965
 offset_right = 124.0

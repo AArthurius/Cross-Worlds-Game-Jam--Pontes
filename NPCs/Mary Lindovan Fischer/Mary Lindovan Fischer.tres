@@ -7,6 +7,10 @@
 [resource]
 script = ExtResource("2_u7soy")
 npcName = "Mary Lindovan Fischer"
+npcAge = 34
+npcSex = 1
+npcCountry = 2
+npcCitadelWork = 1
 NPCTexture = ExtResource("1_uuucm")
 dialog = ["Hi, I'm Mary, I work at the Citadel's saloon.", "I just back from a travel to my parents house.", "Here are my documents."]
 documents = [ExtResource("2_loelq")]
