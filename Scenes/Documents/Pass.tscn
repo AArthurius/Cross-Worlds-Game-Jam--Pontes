@@ -11,6 +11,7 @@ script = ExtResource("1_w8tko")
 metadata/_custom_type_script = "uid://81bf1i2n7vc1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
 texture = ExtResource("2_ligqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

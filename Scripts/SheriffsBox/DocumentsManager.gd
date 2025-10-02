@@ -18,8 +18,8 @@ func dropDocument(doc:Document):
 	var tween = create_tween()
 	tween.tween_property(doc, "position", spots[spot], 0.3)
 
-func DragDocument(document: Node2D) -> void:
-	document.global_position = (get_local_mouse_position() + position) - Vector2(25.0, 0)
+func DragDocument(document: Node2D, offset:Vector2 = Vector2(25.0, 0)) -> void:
+	document.global_position = (get_local_mouse_position() + position) - offset
 	move_child(document, get_child_count() - 1)
 	GameManager.isDraggingADocument = true
 

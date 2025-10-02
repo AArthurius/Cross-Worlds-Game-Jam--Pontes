@@ -11,6 +11,7 @@ var citadelPass:item
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	offset = marker2D.position
 	dragManager()
 	if !isDragging:
 		queue_free()
@@ -24,10 +25,12 @@ func useItem():
 		var stampTexture:Sprite2D = Sprite2D.new()
 		if approveStamp:
 			stampTexture.texture = APPROVED_STAMP
+			citadelPass.approved = true
 		else:
 			stampTexture.texture = DENIED_STAMP
+			citadelPass.denied = true
 		stampTexture.position = stampPos
-		citadelPass.add_child(stampTexture)
+		citadelPass.get_child(0).add_child(stampTexture)
 	queue_free()
 
 

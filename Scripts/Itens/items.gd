@@ -1,6 +1,7 @@
 extends Area2D
 class_name item
 
+var offset:Vector2 = Vector2(25.0, 0)
 var isDragging: bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -9,7 +10,7 @@ func _process(delta: float) -> void:
 
 func dragManager():
 	if isDragging:
-		get_parent().DragDocument($".")
+		get_parent().DragDocument($".", offset)
 		GameManager.isDraggingADocument = true
 	else: 
 		GameManager.isDraggingADocument = false
