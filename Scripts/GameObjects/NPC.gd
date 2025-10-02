@@ -8,6 +8,11 @@ class_name NPC
 @onready var spriteChapeu: Sprite2D = $"Sprite2D/Sprite Chapeu"
 var atributes: NPCAtributes
 
+var accepted:bool = false
+var denied:bool = false
+
+var canAcross: bool
+
 func _ready() -> void:
 	sprite_2d.texture = atributes.NPCTexture
 	var chapeuRand = randi_range(0, 100)

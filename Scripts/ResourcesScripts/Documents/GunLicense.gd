@@ -2,7 +2,7 @@ extends Resource
 class_name GunLicense
 
 enum GunsTypes {Fire, Melee}
-enum Countries {Brazil, United_Kingdoom, Germany, Portugal, Canada, United_States, England}
+enum Countries {Brazil, Germany, Portugal, Canada, USA, England}
 
 @export var Validaty: String
 @export var Type: GunsTypes

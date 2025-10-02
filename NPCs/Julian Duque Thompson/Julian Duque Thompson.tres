@@ -7,6 +7,8 @@
 [resource]
 script = ExtResource("3_uhejp")
 npcName = "Julian Duque Thompson"
+npcAge = 41
+npcCountry = 5
 NPCTexture = ExtResource("1_8phu3")
 dialog = ["Hello, call me Duque, I was called by the citadel government for a meeting.", "Please, be fast, I don't have too much time left.", "Here are my documents."]
 documents = [ExtResource("2_8phu3")]

@@ -7,6 +7,8 @@
 [resource]
 script = ExtResource("3_ywln3")
 npcName = "Derick Frost III"
+npcAge = 42
+npcCountry = 6
 NPCTexture = ExtResource("1_ulsh7")
 dialog = ["Hello, I'm Derick and I came to talk with the forger, my horse lost its hourseshoes.", "I'll also sharpen my spear, its tip is dull.", "Here are my documents."]
-documents = [ExtResource("2_ulsh7"), ExtResource("2_ulsh7")]
+documents = [ExtResource("2_ulsh7")]

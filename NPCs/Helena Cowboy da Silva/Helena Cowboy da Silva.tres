@@ -7,6 +7,8 @@
 [resource]
 script = ExtResource("3_fqgg6")
 npcName = "Helena Cowboy da Silva"
+npcAge = 26
+npcSex = 1
 NPCTexture = ExtResource("1_qyb4s")
 dialog = ["Hello, I came to kill the sheriff's wife.", "Here are my documents."]
 documents = [ExtResource("2_qyb4s")]
