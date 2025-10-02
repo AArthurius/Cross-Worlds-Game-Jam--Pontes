@@ -2,7 +2,7 @@ extends Resource
 class_name NPCID
 
 enum CitadelWorks {None, Saloon, Sheriff, Hotel, Prison_Government, Bridge}
-enum Countries {Brazil, Germany, Portugal, Canada, USA, England}
+enum Countries {Brazil, Germany, Portugal, Canada, USA, England, Scandinavia}
 enum Sex {Male, Female}
 
 @export var npcProfileImage: Texture2D

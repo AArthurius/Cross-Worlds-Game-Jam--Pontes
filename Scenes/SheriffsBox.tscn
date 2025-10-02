@@ -1,8 +1,9 @@
-[gd_scene load_steps=134 format=4 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=136 format=4 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
+[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
-[ext_resource type="Texture2D" uid="uid://dlbv1mlkx085w" path="res://Assets/Cartaz_de_Procurado_V2.png" id="2_hh3na"]
+[ext_resource type="Texture2D" uid="uid://bsfc3852lu70g" path="res://Assets/Props texturas/Mapa_da_Cidade_-_Normal.png" id="2_cme50"]
+[ext_resource type="Texture2D" uid="uid://dlbv1mlkx085w" path="res://Assets/Props texturas/Cartaz_de_Procurado_V2.png" id="2_hh3na"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
 [ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
@@ -563,6 +564,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oq0py")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3urat"]
+albedo_texture = ExtResource("2_cme50")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2qpf"]
 resource_name = "8d5c619bcd3ac09429e27f5d819b37af"
@@ -1838,6 +1842,7 @@ skeleton = NodePath("")
 
 [node name="Mapa" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
 transform = Transform3D(-1.346637e-07, 0.6455091, -9.618836e-08, -1.9237671e-08, -7.6950684e-08, -0.64550906, -0.6455091, -9.618836e-08, 8.599909e-15, -1.5143414, 1.7213316, 2.9566615)
+material_override = SubResource("StandardMaterial3D_3urat")
 mesh = SubResource("ArrayMesh_w02dw")
 skeleton = NodePath("")
 
@@ -1976,21 +1981,6 @@ offset_bottom = 203.0
 mouse_filter = 2
 
 [node name="NPCGenerator" type="Node2D" parent="GameManager/NPC Spawn Area"]
-
-[node name="Document Spots" type="Node2D" parent="GameManager"]
-position = Vector2(285, 200)
-
-[node name="Document Spot" type="Marker2D" parent="GameManager/Document Spots"]
-position = Vector2(-132, 64)
-
-[node name="Document Spot2" type="Marker2D" parent="GameManager/Document Spots"]
-position = Vector2(-109, 64)
-
-[node name="Document Spot3" type="Marker2D" parent="GameManager/Document Spots"]
-position = Vector2(-86, 64)
-
-[node name="Document Spot4" type="Marker2D" parent="GameManager/Document Spots"]
-position = Vector2(18, 80)
 
 [node name="DocumentsManager" type="Node2D" parent="GameManager"]
 position = Vector2(285, 200)

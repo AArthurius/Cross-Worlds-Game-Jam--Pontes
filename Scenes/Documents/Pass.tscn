@@ -19,10 +19,10 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ns7t3")
 
 [node name="Drag" type="Button" parent="."]
-offset_left = -94.0
-offset_top = -61.0
-offset_right = 94.0
-offset_bottom = 61.0
+offset_left = -47.0
+offset_top = -30.0
+offset_right = 47.0
+offset_bottom = 30.0
 focus_mode = 0
 flat = true
 
