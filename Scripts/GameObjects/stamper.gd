@@ -30,6 +30,7 @@ func useItem():
 			stampTexture.texture = DENIED_STAMP
 			citadelPass.denied = true
 		stampTexture.position = stampPos
+		citadelPass.stamped = true
 		citadelPass.get_child(0).add_child(stampTexture)
 	queue_free()
 

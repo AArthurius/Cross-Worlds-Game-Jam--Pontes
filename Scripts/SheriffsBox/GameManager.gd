@@ -14,7 +14,6 @@ func nextNPC():
 	animator.play("Campainha")
 	if npcGenerator.get_child_count() > 0:
 		return
-
 	var character = NPCScene.instantiate()
 	character.atributes = NPCs[randi_range(0, NPCs.size() - 1)].duplicate(true)
 	dialogBox.currentNPC = character
