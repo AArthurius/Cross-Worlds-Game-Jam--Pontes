@@ -1,15 +1,18 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b7h88syl4o37s"]
 
-[ext_resource type="Texture2D" uid="uid://bffwog5nxsvbb" path="res://Assets/FBX/Cenario/Cenario3_10.png" id="1_rfc6l"]
-[ext_resource type="Texture2D" uid="uid://qqpdwsigd2eq" path="res://Assets/FBX/Cenario/Cenario3_11.png" id="2_03nte"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_im26j"]
+load_path = "res://.godot/imported/Cenario3_10.png-3c7f321e7e382ea860c69d3bfd818cba.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y5pas"]
+load_path = "res://.godot/imported/Cenario3_11.png-bbb155b1ee699cf1c3a1a854233f15fe.s3tc.ctex"
 
 [resource]
 resource_name = "Metal amassado"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_rfc6l")
+albedo_texture = SubResource("CompressedTexture2D_im26j")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 normal_enabled = true
 normal_scale = 0.0
-normal_texture = ExtResource("2_03nte")
+normal_texture = SubResource("CompressedTexture2D_y5pas")

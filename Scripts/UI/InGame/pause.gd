@@ -1,6 +1,6 @@
 extends Control
 
-@onready var pause: Button = $"../Pause button"
+@onready var pause: TextureButton = $"../Pause button"
 
 const MENU = preload("uid://6mykfocqfpke")
 
