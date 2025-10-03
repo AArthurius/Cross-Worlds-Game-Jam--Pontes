@@ -29,5 +29,6 @@ func NPCShowDocuments():
 		if docInst.atributes is NPCID:
 			docInst.atributes.assignAtributes(currentNPC.atributes, currentNPC.canAcross)
 			docInst.ownerNPC = currentNPC
+		currentNPC.free = true
 		documentsManager.add_child(docInst)
 		documentsManager.dropDocument(docInst)

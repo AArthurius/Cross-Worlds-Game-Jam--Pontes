@@ -11,20 +11,21 @@ script = ExtResource("1_w8tko")
 metadata/_custom_type_script = "uid://81bf1i2n7vc1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+clip_children = 2
 texture = ExtResource("2_ligqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ns7t3")
 
 [node name="Drag" type="Button" parent="."]
-offset_left = -47.0
-offset_top = -30.0
-offset_right = 47.0
-offset_bottom = 30.0
+offset_left = -94.0
+offset_top = -61.0
+offset_right = 94.0
+offset_bottom = 61.0
 focus_mode = 0
 flat = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="button_down" from="Drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="Drag" to="." method="_on_drag_button_up"]
