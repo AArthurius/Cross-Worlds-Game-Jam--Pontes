@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://6mykfocqfpke"]
+
+[ext_resource type="Texture2D" uid="uid://cyqs0vbxab6gn" path="res://Assets/menu/tela_do_menu.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://cfirvoupapu6q" path="res://Scripts/UI/menu.gd" id="1_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://bt01u3ixyng4u" path="res://Assets/menu/play.png" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://b7dssoh47gj11" path="res://Assets/menu/options.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://3dewwwavclfk" path="res://Assets/menu/credits.png" id="4_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://f22hi02lbkp2" path="res://Assets/menu/exit.png" id="5_wbdvm"]
+
+[node name="canvas" type="CanvasLayer"]
+
+[node name="menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsrd8")
+
+[node name="background" type="TextureRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1rerr")
+
+[node name="list" type="VBoxContainer" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -66.0
+offset_right = 34.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button play" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_xhh6f")
+flat = true
+
+[node name="Button options" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_wwsa2")
+flat = true
+
+[node name="Button credits" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_jsrd8")
+flat = true
+
+[node name="Button exit" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("5_wbdvm")
+flat = true
+
+[connection signal="pressed" from="menu/list/Button play" to="menu" method="_on_button_play_pressed"]
+[connection signal="pressed" from="menu/list/Button options" to="menu" method="_on_button_options_pressed"]
+[connection signal="pressed" from="menu/list/Button credits" to="menu" method="_on_button_credits_pressed"]
+[connection signal="pressed" from="menu/list/Button exit" to="menu" method="_on_button_exit_pressed"]

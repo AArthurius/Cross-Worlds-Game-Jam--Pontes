@@ -1,15 +1,17 @@
-[gd_scene load_steps=134 format=4 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=136 format=4 uid="uid://3o1b3o2tyyeg"]
 
 [ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
-[ext_resource type="Texture2D" uid="uid://bsfc3852lu70g" path="res://Assets/Props texturas/Mapa_da_Cidade_-_Normal.png" id="2_cme50"]
+[ext_resource type="Texture2D" uid="uid://brd471so72g6b" path="res://Assets/Props texturas/Mapa_da_Cidade_-_Normal.png" id="2_cme50"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
 [ext_resource type="PackedScene" uid="uid://dhukukuvoevyi" path="res://Scenes/UI/InGame/Dialog.tscn" id="4_ttg44"]
-[ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
+[ext_resource type="Texture2D" uid="uid://7myqpkq4xf4p" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
 [ext_resource type="Script" uid="uid://dq16fvhgnupnx" path="res://Scripts/SheriffsBox/passSpawner.gd" id="5_8jqrf"]
 [ext_resource type="Script" uid="uid://bbv4eobb504rp" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
 [ext_resource type="Script" uid="uid://3t5p7xnlkp16" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
-[ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="9_cme50"]
+[ext_resource type="FontFile" uid="uid://5gtaact01btu" path="res://Assets/PixelOperator.ttf" id="9_cme50"]
+[ext_resource type="Material" uid="uid://b7h88syl4o37s" path="res://Assets/FBX/Materiais/metal amassado.tres" id="9_sw0ij"]
+[ext_resource type="Texture2D" uid="uid://f22hi02lbkp2" path="res://Assets/menu/exit.png" id="12_xh40l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7w5ej"]
 sky_top_color = Color(0.8447803, 0.6040062, 0.15166488, 1)
@@ -1674,6 +1676,8 @@ current = true
 fov = 83.74934
 
 [node name="Shader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018140674, 0.0017584562, -4.1007996e-05)
+visible = false
 material_override = SubResource("ShaderMaterial_8gbba")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_jjvhh")
@@ -1840,7 +1844,7 @@ light_color = Color(0.89171076, 0.48025495, 0.18479136, 1)
 shadow_enabled = true
 
 [node name="Chão" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0023822784, 0.007730484, -0.015016556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56569576, -0.024673462, 0.43497372)
 mesh = SubResource("PlaneMesh_7u77a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
@@ -1850,16 +1854,19 @@ mesh = SubResource("PlaneMesh_bnppw")
 
 [node name="Campainha suporte" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1291676, 0.93598187, 2.6163497)
+material_override = ExtResource("9_sw0ij")
 mesh = SubResource("ArrayMesh_02f0o")
 skeleton = NodePath("")
 
 [node name="Campainha" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment/Campainha suporte"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120836854, 0)
+material_override = ExtResource("9_sw0ij")
 mesh = SubResource("ArrayMesh_yq37i")
 skeleton = NodePath("")
 
 [node name="Campainha botão" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Environment/Campainha suporte/Campainha"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065185905, 0)
+material_override = ExtResource("9_sw0ij")
 mesh = SubResource("ArrayMesh_q2th3")
 skeleton = NodePath("")
 
@@ -2032,27 +2039,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -43.0
+offset_top = -43.0
+offset_right = 43.0
+offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Resume" type="Button" parent="GameManager/UI/Pause/List"]
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("9_cme50")
 text = "Resume"
 
 [node name="Instructions" type="Button" parent="GameManager/UI/Pause/List"]
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("9_cme50")
 text = "Instructions"
 
 [node name="Exit" type="Button" parent="GameManager/UI/Pause/List"]
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("9_cme50")
-text = "Exit"
+text = "
+"
+icon = ExtResource("12_xh40l")
+flat = true
 
 [node name="Pause button" type="Button" parent="GameManager/UI"]
 theme_override_fonts/font = ExtResource("9_cme50")
