@@ -4,8 +4,8 @@ extends item
 
 @export var approveStamp:bool = false
 
-const APPROVED_STAMP = preload("uid://crkj8vaddtddc")
-const DENIED_STAMP = preload("uid://dog5rtu1myxc2")
+#const APPROVED_STAMP = preload("uid://crkj8vaddtddc")
+#const DENIED_STAMP = preload("uid://dog5rtu1myxc2")
 
 var citadelPass:item
 
@@ -24,10 +24,10 @@ func useItem():
 		var stampPos:Vector2 = citadelPass.to_local(marker2D.global_position)
 		var stampTexture:Sprite2D = Sprite2D.new()
 		if approveStamp:
-			stampTexture.texture = APPROVED_STAMP
+			#stampTexture.texture = APPROVED_STAMP
 			citadelPass.approved = true
 		else:
-			stampTexture.texture = DENIED_STAMP
+			#stampTexture.texture = DENIED_STAMP
 			citadelPass.denied = true
 		stampTexture.position = stampPos
 		citadelPass.stamped = true
