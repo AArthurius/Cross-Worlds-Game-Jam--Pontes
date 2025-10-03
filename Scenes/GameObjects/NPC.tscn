@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dj8do0uhqhcxq"]
+[gd_scene load_steps=10 format=3 uid="uid://dj8do0uhqhcxq"]
 
 [ext_resource type="Script" uid="uid://msuxf5dotjtq" path="res://Scripts/GameObjects/NPC.gd" id="1_ryh40"]
 [ext_resource type="Texture2D" uid="uid://xqevycmyhsxx" path="res://Assets/NPCs/Default.png" id="2_ryh40"]
@@ -68,9 +68,40 @@ tracks/0/keys = {
 "values": [Vector2(-93, 75)]
 }
 
+[sub_resource type="Animation" id="Animation_kpujj"]
+resource_name = "Backing"
+length = 1.0667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-43, 76), Vector2(-27.75, 81), Vector2(-12.5, 76), Vector2(2.75, 81), Vector2(18, 76), Vector2(33.5, 81), Vector2(48.5, 76), Vector2(63.75, 81), Vector2(79, 76)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_344ge"]
 _data = {
 &"Accepted": SubResource("Animation_344ge"),
+&"Backing": SubResource("Animation_kpujj"),
 &"Coming": SubResource("Animation_21xkr"),
 &"RESET": SubResource("Animation_6bp64")
 }

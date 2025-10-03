@@ -84,7 +84,7 @@ scroll_active = false
 [node name="País" type="RichTextLabel" parent="Document Sprite/Dados/VBoxContainer/País Label"]
 layout_mode = 0
 offset_left = 52.0
-offset_right = 124.0
+offset_right = 132.0
 offset_bottom = 16.0
 theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
 theme_override_fonts/normal_font = ExtResource("5_s21xi")

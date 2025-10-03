@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://bx0xovq7rnkmf"]
+
+[ext_resource type="Texture2D" uid="uid://cav3g7y3aulqj" path="res://Assets/NPCs/Dona Maria Evarista.png" id="1_e4ryb"]
+[ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_ph7lx"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_8i5ft"]
+
+[resource]
+script = ExtResource("3_8i5ft")
+npcName = "Dona Maria Evarista"
+npcAge = 67
+npcSex = 1
+NPCTexture = ExtResource("1_e4ryb")
+dialog = ["Hello, noble Sheriff. I’ve come to visit my grandchildren in the Citadel.", "I can’t wait to see how much they’ve grown. I’ve missed them so much.", "Here are my documents."]
+documents = [ExtResource("2_ph7lx")]

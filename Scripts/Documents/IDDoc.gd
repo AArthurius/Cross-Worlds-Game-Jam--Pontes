@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		if position.y <= 80:
 			position.y += 4
 		GameManager.isDraggingADocument = false
-		if isOnNPCArea and (ownerNPC.accepted or ownerNPC.denied):
+		if isOnNPCArea and (GameManager.currentNPC.accepted or GameManager.currentNPC.denied):
 			GameManager.isDraggingADocument = false
 			queue_free()
 

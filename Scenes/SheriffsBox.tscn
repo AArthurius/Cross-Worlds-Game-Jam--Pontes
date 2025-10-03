@@ -1,6 +1,6 @@
 [gd_scene load_steps=134 format=4 uid="uid://3o1b3o2tyyeg"]
 
-[ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
+[ext_resource type="Shader" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
 [ext_resource type="Texture2D" uid="uid://bsfc3852lu70g" path="res://Assets/Props texturas/Mapa_da_Cidade_-_Normal.png" id="2_cme50"]
 [ext_resource type="Script" uid="uid://ksmwy7xe6dq7" path="res://Scripts/SheriffsBox/GameManager.gd" id="3_bnppw"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
 [ext_resource type="Script" uid="uid://dq16fvhgnupnx" path="res://Scripts/SheriffsBox/passSpawner.gd" id="5_8jqrf"]
 [ext_resource type="Script" uid="uid://bbv4eobb504rp" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
-[ext_resource type="Script" uid="uid://3t5p7xnlkp16" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
+[ext_resource type="Script" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
 [ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="9_cme50"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7w5ej"]
@@ -2006,6 +2006,21 @@ offset_right = 284.0
 offset_bottom = -246.0
 grow_vertical = 0
 
+[node name="Points" type="Control" parent="GameManager/UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Points" type="Label" parent="GameManager/UI/Points"]
+layout_mode = 1
+offset_left = 522.0
+offset_top = 5.0
+offset_right = 562.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
 [node name="Pause" type="Control" parent="GameManager/UI"]
 visible = false
 layout_mode = 3
@@ -2058,6 +2073,7 @@ text = "Exit"
 theme_override_fonts/font = ExtResource("9_cme50")
 text = "Pause"
 
+[connection signal="child_exiting_tree" from="GameManager/NPC Spawn Area/NPCGenerator" to="GameManager" method="NPCExited"]
 [connection signal="mouse_entered" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_mouse_entered"]
 [connection signal="mouse_exited" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_mouse_exited"]
 [connection signal="pressed" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_pressed"]

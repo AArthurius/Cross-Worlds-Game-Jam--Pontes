@@ -1,10 +1,12 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cboyhjvrb2gua"]
+[gd_resource type="Resource" script_class="GunLicense" load_steps=3 format=3 uid="uid://cboyhjvrb2gua"]
 
+[ext_resource type="Texture2D" uid="uid://2pwwv1vritw0" path="res://Assets/Documentos/GunLicense/Guns/Pistol.png" id="1_am5wd"]
 [ext_resource type="Script" uid="uid://bmcgfj5bf3i6s" path="res://Scripts/ResourcesScripts/Documents/GunLicense.gd" id="1_bvq0e"]
 
 [resource]
 script = ExtResource("1_bvq0e")
-Validaty = "00.00.00"
-Type = 1
+GunName = "Pistol"
+Sprite = ExtResource("1_am5wd")
+Validaty = "09.03.1884"
 Number = "SPJ81"
 bearerCountry = 5

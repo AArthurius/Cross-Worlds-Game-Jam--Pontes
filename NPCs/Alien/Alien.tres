@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=3 format=3 uid="uid://cx7pltt4xjmvy"]
+
+[ext_resource type="Texture2D" uid="uid://b382o7rmqwcdm" path="res://Assets/NPCs/Alien.png" id="1_6nlkm"]
+[ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="2_6gmeq"]
+
+[resource]
+script = ExtResource("2_6gmeq")
+npcName = "Alien"
+NPCTexture = ExtResource("1_6nlkm")
+dialog = ["A Earthling? And one of the armed ones. Don’t you think you should be doing something else right now?", "I don’t know if this is the place, but everything seems so dull and violent around here.", "Be careful out there, she-she... That name on your shirt, a strange name for a human…"]

@@ -22,11 +22,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if documentsTable.get_child_count() == 0 && !animator.is_playing() && !dialogBox.visible:
-		if accepted:
-			animator.play("Accepted")
+		if atributes.npcName != "Alien":
+			dialogBox.ShowFinalDialog(accepted, animator)
 		else:
-			animator.play_backwards("Coming")
-
+			animator.play_backwards("Backing")
 
 func npc_animator_finished(anim_name: StringName) -> void:
 	if anim_name == "Coming":

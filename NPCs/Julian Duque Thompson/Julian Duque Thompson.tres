@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://bv7qp4ik0rxp4"]
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=5 format=3 uid="uid://bv7qp4ik0rxp4"]
 
 [ext_resource type="Texture2D" uid="uid://c2sd5eapfqit2" path="res://Assets/NPCs/Julian Duque Thompson.png" id="1_8phu3"]
 [ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_8phu3"]
+[ext_resource type="PackedScene" uid="uid://c32hujk1yd8fb" path="res://Scenes/Documents/Gun License.tscn" id="3_gg7as"]
 [ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_uhejp"]
 
 [resource]
@@ -11,4 +12,4 @@ npcAge = 41
 npcCountry = 5
 NPCTexture = ExtResource("1_8phu3")
 dialog = ["Hello, call me Duque, I was called by the citadel government for a meeting.", "Please, be fast, I don't have too much time left.", "Here are my documents."]
-documents = [ExtResource("2_8phu3")]
+documents = [ExtResource("2_8phu3"), ExtResource("3_gg7as")]

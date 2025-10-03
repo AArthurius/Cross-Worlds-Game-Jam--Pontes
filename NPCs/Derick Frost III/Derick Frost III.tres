@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://bpp0t332yfokm"]
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=5 format=3 uid="uid://bpp0t332yfokm"]
 
 [ext_resource type="Texture2D" uid="uid://bs2hxkh48eefl" path="res://Assets/NPCs/Derick Frost III.png" id="1_ulsh7"]
 [ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_ulsh7"]
+[ext_resource type="PackedScene" uid="uid://c32hujk1yd8fb" path="res://Scenes/Documents/Gun License.tscn" id="3_i1tg8"]
 [ext_resource type="Script" uid="uid://cx857svlxoj7x" path="res://Scripts/ResourcesScripts/NPCAtributes.gd" id="3_ywln3"]
 
 [resource]
@@ -11,4 +12,4 @@ npcAge = 42
 npcCountry = 6
 NPCTexture = ExtResource("1_ulsh7")
 dialog = ["Hello, I'm Derick and I came to talk with the forger, my horse lost its hourseshoes.", "I'll also sharpen my spear, its tip is dull.", "Here are my documents."]
-documents = [ExtResource("2_ulsh7")]
+documents = [ExtResource("2_ulsh7"), ExtResource("3_i1tg8")]

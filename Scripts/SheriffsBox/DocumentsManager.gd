@@ -10,7 +10,7 @@ var spot4Free = true
 
 var spots: Array = [Vector2(-132, 80), Vector2(-109, 80), Vector2(-86, 80), Vector2(-63, 80)]
 
-func dropDocument(doc:Document):
+func dropDocument(doc):
 	var spot:int = randi_range(0, 3)
 	while !checkSpot(spot):
 		spot = randi_range(0, 3)
