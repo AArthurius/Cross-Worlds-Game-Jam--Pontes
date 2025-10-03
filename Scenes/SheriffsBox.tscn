@@ -1,4 +1,4 @@
-[gd_scene load_steps=231 format=4 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=232 format=4 uid="uid://3o1b3o2tyyeg"]
 
 [ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bffwog5nxsvbb" path="res://Assets/FBX/Cenario/Cenario3_10.png" id="24_mwrrp"]
 [ext_resource type="Texture2D" uid="uid://c1fi0gmxhofej" path="res://Assets/menu/Buttons deafault/guide.png" id="24_oevq1"]
 [ext_resource type="Texture2D" uid="uid://qqpdwsigd2eq" path="res://Assets/FBX/Cenario/Cenario3_11.png" id="25_10tgb"]
+[ext_resource type="AudioStream" uid="uid://cnkmfcrjg0y3d" path="res://Assets/Music/WEstern2_2 (1).wav" id="26_l2gx2"]
 [ext_resource type="Texture2D" uid="uid://berw1u0p4rwc5" path="res://Assets/menu/Buttons deafault/pause.png" id="26_oevq1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjsyq"]
@@ -3312,7 +3313,8 @@ offset_bottom = 25.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("26_oevq1")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="GameManager"]
+[node name="Music" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("26_l2gx2")
 autoplay = true
 
 [connection signal="mouse_entered" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_mouse_entered"]
