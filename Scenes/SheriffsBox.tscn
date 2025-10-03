@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=4 uid="uid://3o1b3o2tyyeg"]
+[gd_scene load_steps=134 format=4 uid="uid://3o1b3o2tyyeg"]
 
 [ext_resource type="Shader" uid="uid://b3f2a7x0hvnjv" path="res://Shader/edge_detection.gdshader" id="1_7w5ej"]
 [ext_resource type="Script" uid="uid://g5eopkn8sin3" path="res://Scripts/SheriffsBox/DocumentsManager.gd" id="1_ppcta"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://f8rth0wsr8hk" path="res://Assets/Documentos/Passe.png" id="5_7w5ej"]
 [ext_resource type="Script" uid="uid://dq16fvhgnupnx" path="res://Scripts/SheriffsBox/passSpawner.gd" id="5_8jqrf"]
 [ext_resource type="Script" uid="uid://bbv4eobb504rp" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
+[ext_resource type="Script" uid="uid://3t5p7xnlkp16" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
+[ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="9_cme50"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7w5ej"]
 sky_top_color = Color(0.8447803, 0.6040062, 0.15166488, 1)
@@ -1646,8 +1648,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -3.0
 offset_top = 1.0
-offset_right = -3.0
-offset_bottom = 1.0
+offset_right = 0.5625
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1655,7 +1657,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(570, 320)
+size = Vector2i(573, 322)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -2004,6 +2006,58 @@ offset_right = 284.0
 offset_bottom = -246.0
 grow_vertical = 0
 
+[node name="Pause" type="Control" parent="GameManager/UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_3urat")
+
+[node name="Albedo" type="ColorRect" parent="GameManager/UI/Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6901961)
+
+[node name="List" type="VBoxContainer" parent="GameManager/UI/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="GameManager/UI/Pause/List"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_cme50")
+text = "Resume"
+
+[node name="Instructions" type="Button" parent="GameManager/UI/Pause/List"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_cme50")
+text = "Instructions"
+
+[node name="Exit" type="Button" parent="GameManager/UI/Pause/List"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_cme50")
+text = "Exit"
+
+[node name="Pause button" type="Button" parent="GameManager/UI"]
+theme_override_fonts/font = ExtResource("9_cme50")
+text = "Pause"
+
 [connection signal="mouse_entered" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_mouse_entered"]
 [connection signal="mouse_exited" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_mouse_exited"]
 [connection signal="pressed" from="GameManager/Item Interact/Stamp 1 Button" to="GameManager/Item Interact" method="Stamp_1_button_pressed"]
@@ -2013,3 +2067,7 @@ grow_vertical = 0
 [connection signal="button_down" from="GameManager/Item Interact/PassSpawner" to="GameManager/Item Interact/PassSpawner" method="_on_button_down"]
 [connection signal="mouse_entered" from="GameManager/Item Interact/PassSpawner" to="GameManager/Item Interact/PassSpawner" method="_on_mouse_entered"]
 [connection signal="pressed" from="GameManager/Item Interact/Campainha" to="GameManager" method="nextNPC"]
+[connection signal="pressed" from="GameManager/UI/Pause/List/Resume" to="GameManager/UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="GameManager/UI/Pause/List/Instructions" to="GameManager/UI/Pause" method="_on_instructions_pressed"]
+[connection signal="pressed" from="GameManager/UI/Pause/List/Exit" to="GameManager/UI/Pause" method="_on_exit_pressed"]
+[connection signal="pressed" from="GameManager/UI/Pause button" to="GameManager/UI/Pause" method="_on_pause_button_pressed"]
