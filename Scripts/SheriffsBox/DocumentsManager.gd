@@ -1,7 +1,7 @@
 extends Node2D
 
-#@onready var carimbo1: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1"
-#@onready var carimbo2: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Pequeno"
+@onready var carimbo1: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1"
+@onready var carimbo2: Node3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Pequeno"
 
 var spot1Free = true
 var spot2Free = true
@@ -10,7 +10,7 @@ var spot4Free = true
 
 var spots: Array = [Vector2(-132, 80), Vector2(-109, 80), Vector2(-86, 80), Vector2(-63, 80)]
 
-func dropDocument(doc):
+func dropDocument(doc:Document):
 	var spot:int = randi_range(0, 3)
 	while !checkSpot(spot):
 		spot = randi_range(0, 3)

@@ -5,8 +5,8 @@ extends Control
 @onready var animator_stamp_2: AnimationPlayer = $"Animator Stamp2"
 @onready var animator_campainha: AnimationPlayer = $"Animator Campainha"
 @onready var documentsManager: Node2D = $"../DocumentsManager"
-@onready var carimbo1: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1"
-@onready var carimbo2: MeshInstance3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Pequeno"
+@onready var carimbo1: Node3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo 1"
+@onready var carimbo2: Node3D = $"../../SubViewportContainer/SubViewport/Environment/Carimbos/Carimbo Pequeno"
 
 const STAMPER_DENIED = preload("uid://d3qvbnjvp8t0t")
 const STAMPER_APPROVED = preload("uid://d3788yhknvdyc")

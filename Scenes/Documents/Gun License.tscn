@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c32hujk1yd8fb"]
 
-[ext_resource type="Script" uid="uid://c2g25pyyadrsx" path="res://Scripts/Documents/GunLicense.gd" id="1_swe8s"]
-[ext_resource type="Texture2D" uid="uid://i37nxc4as0vh" path="res://Assets/Documentos/GunLicense/gun_license_empty.png" id="2_n82mj"]
+[ext_resource type="Script" path="res://Scripts/Documents/GunLicense.gd" id="1_swe8s"]
+[ext_resource type="Texture2D" uid="uid://lu0nexx2egfs" path="res://Assets/Documentos/GunLicense/gun_license_empty.png" id="2_n82mj"]
 [ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="3_6adge"]
-[ext_resource type="Texture2D" uid="uid://c3ccd2821e21w" path="res://Assets/Documentos/GunLicense/gun_license.png" id="5_gunu2"]
+[ext_resource type="Texture2D" uid="uid://qqc0xui4ymfa" path="res://Assets/Documentos/GunLicense/gun_license.png" id="5_gunu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dyag"]
 size = Vector2(187, 345.7143)

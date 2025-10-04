@@ -1,6 +1,6 @@
 extends Control
 
-@onready var pause: Button = $"../Pause button"
+@onready var pause: TextureButton = $"../Pause button"
 
 
 func _on_pause_button_pressed() -> void:

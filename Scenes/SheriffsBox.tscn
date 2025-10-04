@@ -12,20 +12,20 @@
 [ext_resource type="Script" uid="uid://dq16fvhgnupnx" path="res://Scripts/SheriffsBox/passSpawner.gd" id="5_8jqrf"]
 [ext_resource type="Texture2D" uid="uid://cxuy3jax1dntv" path="res://Assets/FBX/itens/Carimbo (1)_1.png" id="5_tv7x2"]
 [ext_resource type="Script" uid="uid://bbv4eobb504rp" path="res://Scripts/SheriffsBox/itemInteract.gd" id="7_bnppw"]
-[ext_resource type="Script" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
-[ext_resource type="Texture2D" uid="uid://b6vgh13h5hn52" path="res://Assets/menu/Buttons default/exit.png" id="12_xh40l"]
+[ext_resource type="Script" uid="uid://3t5p7xnlkp16" path="res://Scripts/UI/InGame/pause.gd" id="9_3urat"]
+[ext_resource type="Texture2D" uid="uid://bry58tt0pspl0" path="res://Assets/menu/Buttons default/exit.png" id="12_xh40l"]
 [ext_resource type="Texture2D" uid="uid://lpurb0dcn0cq" path="res://Assets/FBX/bakes/Janela/Janela.png" id="18_l2gx2"]
 [ext_resource type="Texture2D" uid="uid://b322iwrpoppoj" path="res://Assets/FBX/bakes/Mesa/Mesa_Final.png" id="20_1dv53"]
 [ext_resource type="Texture2D" uid="uid://bsvvdx0taqyuy" path="res://Assets/FBX/bakes/Teto/Teto.png" id="21_8q2av"]
 [ext_resource type="Texture2D" uid="uid://c34sms81hi72n" path="res://Assets/FBX/Cenario/Cenario3_4.png" id="21_v2mgs"]
 [ext_resource type="Texture2D" uid="uid://bdgmxif8m65df" path="res://Assets/FBX/Cenario/Cenario3_5.png" id="22_8q2av"]
-[ext_resource type="Texture2D" uid="uid://cnprs7q4e01p5" path="res://Assets/menu/Buttons default/resume.png" id="23_sw0ij"]
+[ext_resource type="Texture2D" uid="uid://b1abyxr820e3g" path="res://Assets/menu/Buttons default/resume.png" id="23_sw0ij"]
 [ext_resource type="Texture2D" uid="uid://cn8uq32l43bip" path="res://Assets/FBX/Cenario/Cenario3_8.png" id="23_tebp7"]
 [ext_resource type="Texture2D" uid="uid://bffwog5nxsvbb" path="res://Assets/FBX/Cenario/Cenario3_10.png" id="24_mwrrp"]
-[ext_resource type="Texture2D" uid="uid://ujnbpt4wwqbb" path="res://Assets/menu/Buttons default/guide.png" id="24_oevq1"]
+[ext_resource type="Texture2D" uid="uid://cvudrfwh3p2w4" path="res://Assets/menu/Buttons default/guide.png" id="24_oevq1"]
 [ext_resource type="Texture2D" uid="uid://qqpdwsigd2eq" path="res://Assets/FBX/Cenario/Cenario3_11.png" id="25_10tgb"]
 [ext_resource type="AudioStream" uid="uid://cnkmfcrjg0y3d" path="res://Assets/Music/WEstern2_2 (1).wav" id="26_l2gx2"]
-[ext_resource type="Texture2D" uid="uid://d2su4eg6m0ukq" path="res://Assets/menu/Buttons default/pause.png" id="26_oevq1"]
+[ext_resource type="Texture2D" uid="uid://dpgocbpnimjbh" path="res://Assets/menu/Buttons default/pause.png" id="26_oevq1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hjsyq"]
 sky_top_color = Color(1, 0.55700326, 0.14050242, 1)
@@ -592,6 +592,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fqo1u")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x73an"]
+load_path = "res://.godot/imported/ParedeV2.png-9ef756b6a5029048ea3a30dab9724893.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wprue"]
 albedo_texture = SubResource("CompressedTexture2D_x73an")
