@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=3 uid="uid://c32hujk1yd8fb"]
+
+[ext_resource type="Script" path="res://Scripts/Documents/GunLicense.gd" id="1_swe8s"]
+[ext_resource type="Texture2D" uid="uid://cvp1bllohfl67" path="res://Assets/Documentos/GunLicense/gun_license_empty.png" id="2_n82mj"]
+[ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="3_6adge"]
+[ext_resource type="Texture2D" uid="uid://dj1lnkcuxyduv" path="res://Assets/Documentos/GunLicense/gun_license.png" id="5_gunu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dyag"]
+size = Vector2(187, 345.7143)
+
+[node name="Gun License" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_swe8s")
+
+[node name="Document Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_n82mj")
+
+[node name="Area Foto" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Foto Arma" type="Sprite2D" parent="Area Foto"]
+position = Vector2(-61.000004, -4)
+scale = Vector2(0.6, 0.6)
+
+[node name="Dados" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -61.0
+offset_right = -94.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nome arma" type="RichTextLabel" parent="Dados"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 97.0
+offset_right = 185.0
+offset_bottom = 113.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "Gun:"
+fit_content = true
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dados"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 24.0
+offset_right = 152.0
+offset_bottom = 107.0
+theme_override_constants/separation = 1
+
+[node name="Validade Label" type="RichTextLabel" parent="Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "Validity:
+"
+fit_content = true
+scroll_active = false
+
+[node name="Validade" type="RichTextLabel" parent="Dados/VBoxContainer/Validade Label"]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 124.0
+offset_bottom = 16.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Tipo Label" type="RichTextLabel" parent="Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "Weapon Type:"
+fit_content = true
+scroll_active = false
+
+[node name="Tipo" type="RichTextLabel" parent="Dados/VBoxContainer/Tipo Label"]
+layout_mode = 0
+offset_left = 82.0
+offset_right = 122.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Number Label" type="RichTextLabel" parent="Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "N°"
+fit_content = true
+scroll_active = false
+
+[node name="Number" type="RichTextLabel" parent="Dados/VBoxContainer/Number Label"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 121.0
+offset_bottom = 18.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_active = false
+
+[node name="Bearer Nacionality Label" type="RichTextLabel" parent="Dados/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "Country:"
+fit_content = true
+scroll_active = false
+
+[node name="Bearer Nacionality" type="RichTextLabel" parent="Dados/VBoxContainer/Bearer Nacionality Label"]
+clip_contents = false
+layout_mode = 0
+offset_left = 55.0
+offset_right = 122.0
+offset_bottom = 16.0
+theme_override_colors/default_color = Color(0.40392157, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("3_6adge")
+theme_override_font_sizes/normal_font_size = 16
+text = "
+"
+fit_content = true
+scroll_active = false
+
+[node name="Sprite Cover" type="Sprite2D" parent="."]
+texture = ExtResource("5_gunu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.35)
+shape = SubResource("RectangleShape2D_1dyag")
+
+[node name="Drag" type="Button" parent="."]
+offset_left = -95.0
+offset_top = -61.0
+offset_right = 94.0
+offset_bottom = 62.0
+focus_mode = 0
+flat = true
+
+[connection signal="area_entered" from="." to="." method="AreaEntered"]
+[connection signal="area_exited" from="." to="." method="AreaExited"]
+[connection signal="button_down" from="Drag" to="." method="OnButtonDown"]
+[connection signal="button_up" from="Drag" to="." method="OnButtonUp"]

@@ -18,13 +18,26 @@ func ShowMessage() -> void:
 	if dialog.size() == 0:
 		$".".visible = false
 		showCharacter.stop()
-		gameManager.NPCShowDocuments()
+		if !GameManager.dialogCurrentMessage == "All right, go foward and cross the bridge." && !GameManager.dialogCurrentMessage == "Your documents have invalid informations. Please, back when you have valid documents.":
+			gameManager.NPCShowDocuments()
 		return
 	visible = true
 	var MSG = dialog.pop_front()
 	GameManager.dialogCurrentMessage = MSG
 	visible_characters = 0
 	text = MSG
+	showCharacter.start()
+
+func ShowFinalDialog(dialogCanAcross: bool, npcAnimator: AnimationPlayer) -> void:
+	if dialogCanAcross:
+		text = "All right, go foward and cross the bridge."
+		npcAnimator.play("Accepted")
+	else:
+		text = "Your documents have invalid informations. Please, back when you have valid documents."
+		npcAnimator.play_backwards("Coming")
+	visible = true
+	GameManager.dialogCurrentMessage = text
+	visible_characters = 0
 	showCharacter.start()
 
 func ShowCharacter() -> void:
