@@ -10,7 +10,7 @@ extends Node2D
 const NPCScene: PackedScene = preload("uid://dj8do0uhqhcxq")
 var currentNPC = null
 
-var NPCs: Array = [preload("uid://eqietaws314b"), preload("uid://bv7qp4ik0rxp4"), preload("uid://djb0dasiq3tyn"),preload("uid://bsmdlqgnjug86"), preload("uid://cr4yydj1rh0uw"), preload("uid://bpp0t332yfokm"), preload("uid://v0pkxb3o2s6e"), preload("uid://cx7pltt4xjmvy"), preload("uid://bx0xovq7rnkmf"), preload("uid://jmc1um56q2w")]
+var NPCs: Array = [preload("res://NPCs/Alien/Alien.tres"), preload("res://NPCs/Clarice Wagner Sterling/Clarice Wagner Sterling.tres"), preload("res://NPCs/Derick Frost III/Derick Frost III.tres"), preload("res://NPCs/Dona Maria Evarista/Dona Maria Evarista.tres"), preload("res://NPCs/Helena Cowboy da Silva/Helena Cowboy da Silva.tres"), preload("res://NPCs/Julian Duque Thompson/Julian Duque Thompson.tres"), preload("res://NPCs/Madeline Montello Barros/Madeline Montello Barros.tres"), preload("res://NPCs/Mary Lindovan Fischer/Mary Lindovan Fischer.tres"), preload("res://NPCs/Rose Whitmore Monroe/Rose Whitmore Monroe.tres"), preload("res://NPCs/Santiago Xavier Morais/Santiago Xavier Morais.tres")]
 
 func nextNPC():
 	animator.play("Campainha")
@@ -41,13 +41,16 @@ func NPCShowDocuments():
 
 func NPCExited(node: Node) -> void:
 	if node is NPC:
-		if node.atributes.npcName != "Alien":
-			if node.accepted && node.canAcross:
-				GameManager.Points += 1
-			elif node.denied && !node.canAcross:
-				GameManager.Points += 1
-			else:
-				if GameManager.Points > 0:
-					GameManager.Points -= 1
-		else: NPCs.remove_at(7)
+		if node.atributes.npcName == "Alien":
+			NPCs.remove_at(0)
+		if node.accepted && node.canAcross:
+			GameManager.Points += 1
+		elif node.denied && !node.canAcross:
+			GameManager.Points += 1
+		else:
+			if GameManager.Points > 0:
+				GameManager.Points -= 1
 	points.text = str(GameManager.Points)
+
+func _on_music_finished() -> void:
+	$Music.play()

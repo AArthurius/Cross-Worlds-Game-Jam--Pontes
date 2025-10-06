@@ -1,0 +1,183 @@
+[gd_scene load_steps=12 format=3 uid="uid://6mykfocqfpke"]
+
+[ext_resource type="Texture2D" uid="uid://ct2d2tbep1hyc" path="res://Assets/menu/tela_do_menu.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://cfirvoupapu6q" path="res://Scripts/UI/menu.gd" id="1_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://bcr1o5h7xd37p" path="res://Assets/menu/Buttons deafault/play.png" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://csoa6tphlxeej" path="res://Assets/menu/Buttons deafault/credits.png" id="4_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://ujnbpt4wwqbb" path="res://Assets/menu/Buttons deafault/guide.png" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://b6vgh13h5hn52" path="res://Assets/menu/Buttons deafault/exit.png" id="5_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://0trn0i6qxecx" path="res://Assets/Logos/LogoNoBG.png" id="7_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://bx5quen0ni75u" path="res://Assets/Props texturas/Cartaz_de_Procurado_V2.png" id="8_7qvly"]
+[ext_resource type="AudioStream" uid="uid://cnkmfcrjg0y3d" path="res://Assets/Music/WEstern2_2 (1).wav" id="8_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://06if2i3wmwld" path="res://Assets/UI/Guide.png" id="8_rfqti"]
+[ext_resource type="FontFile" uid="uid://gyj074f3shli" path="res://Assets/PixelOperator.ttf" id="9_rfqti"]
+
+[node name="canvas" type="CanvasLayer"]
+
+[node name="menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsrd8")
+
+[node name="background" type="TextureRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1rerr")
+
+[node name="Logo" type="TextureRect" parent="menu"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -21.0
+offset_right = 248.0
+offset_bottom = 216.0
+mouse_filter = 2
+texture = ExtResource("7_wbdvm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="list" type="VBoxContainer" parent="menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = 20.0
+offset_right = -194.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button play" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_xhh6f")
+flat = true
+
+[node name="Button guide" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_wbdvm")
+flat = true
+
+[node name="Button credits" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_jsrd8")
+flat = true
+
+[node name="Button exit" type="Button" parent="menu/list"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("5_wbdvm")
+flat = true
+
+[node name="Guide" type="TextureRect" parent="."]
+visible = false
+offset_left = 110.0
+offset_top = -100.0
+offset_right = 610.0
+offset_bottom = 360.0
+texture = ExtResource("8_rfqti")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GuideText" type="RichTextLabel" parent="Guide"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 125.0
+offset_right = 376.0
+offset_bottom = 294.0
+theme_override_colors/default_color = Color(0.4, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("9_rfqti")
+theme_override_font_sizes/normal_font_size = 14
+text = "- Read the dialogs and pick the citizens documents;
+- Be careful and take a look at the document's informations and see if there is any wrong information;
+- Pick a citadel pass and stamp it with the green or red stamper (green is the circle and red is the square one);
+- Give back the citizen document and give the citadel pass to him/her and finish the service;"
+
+[node name="Controls" type="TextureRect" parent="Guide"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 233.0
+offset_right = 472.0
+offset_bottom = 509.0
+texture = ExtResource("8_rfqti")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Controls" type="Label" parent="Guide/Controls"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 73.0
+offset_right = 225.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.4, 0.30980393, 0.16862746, 1)
+theme_override_fonts/font = ExtResource("9_rfqti")
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="ControlsList" type="RichTextLabel" parent="Guide/Controls"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 88.0
+offset_right = 228.0
+offset_bottom = 177.0
+theme_override_colors/default_color = Color(0.4, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("9_rfqti")
+theme_override_font_sizes/normal_font_size = 10
+text = "- Click on the bell to call the next citizen;
+- Right click on the mouse to stamp the citadel pass (While holding the stamper on it);
+- Click and hold to drag and zoom a citizen document;
+- ENTER to go to the next dialog;"
+
+[node name="Credits" type="TextureRect" parent="."]
+visible = false
+offset_left = 240.0
+offset_top = 10.0
+offset_right = 450.0
+offset_bottom = 310.0
+texture = ExtResource("8_7qvly")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Team" type="RichTextLabel" parent="Credits"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 100.0
+offset_right = 179.0
+offset_bottom = 233.0
+theme_override_colors/default_color = Color(0.4, 0.30980393, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("9_rfqti")
+theme_override_font_sizes/normal_font_size = 12
+text = "Game design: Gustavo, Itallo, Evandro and Arthur
+
+Programming: Itallo Casimiro and Arthur Penna
+
+Artistas: Gustavo Nunes and Evandro Martins
+
+Sound design: Maza"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q3rjx")
+autoplay = true
+bus = &"BGM"
+
+[connection signal="pressed" from="menu/list/Button play" to="menu" method="_on_button_play_pressed"]
+[connection signal="pressed" from="menu/list/Button guide" to="menu" method="_on_button_guide_pressed"]
+[connection signal="pressed" from="menu/list/Button credits" to="menu" method="_on_button_credits_pressed"]
+[connection signal="pressed" from="menu/list/Button exit" to="menu" method="_on_button_exit_pressed"]
+[connection signal="finished" from="Music" to="menu" method="MusicFinished"]

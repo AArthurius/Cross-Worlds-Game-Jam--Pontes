@@ -9,4 +9,4 @@ GunName = "Pistol"
 Sprite = ExtResource("1_am5wd")
 Validaty = "09.03.1884"
 Number = "SPJ81"
-bearerCountry = 5
+bearerCountry = 6

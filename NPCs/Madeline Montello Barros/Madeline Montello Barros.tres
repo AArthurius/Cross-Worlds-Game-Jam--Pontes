@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://jmc1um56q2w"]
+[gd_resource type="Resource" script_class="NPCAtributes" load_steps=4 format=3 uid="uid://7dc4b8q3dqjr"]
 
 [ext_resource type="Texture2D" uid="uid://dof0ggn5ce8nq" path="res://Assets/NPCs/Madeline Montello Barros.png" id="1_q0bh4"]
 [ext_resource type="PackedScene" uid="uid://fah7kcn8pdob" path="res://Scenes/Documents/ID document.tscn" id="2_otp88"]
@@ -11,5 +11,5 @@ npcAge = 30
 npcSex = 1
 npcCitadelWork = 6
 NPCTexture = ExtResource("1_q0bh4")
-dialog = ["Greetings, Brother. I’ve applied to become the new nun at the Citadel’s church, to devote my life and pray in the name of God.", "I believe we’ll be saved someday, don’t you?", "Here are my documents."]
+dialog = ["Greetings, Brother. I'm Madeline, I’ve applied to become the new nun at the Citadel’s church, to devote my life and pray in the name of God.", "I believe we’ll be saved someday, don’t you?", "Here are my documents."]
 documents = [ExtResource("2_otp88")]

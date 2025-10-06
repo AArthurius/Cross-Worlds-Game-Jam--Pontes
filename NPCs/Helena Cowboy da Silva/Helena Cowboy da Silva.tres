@@ -10,6 +10,6 @@ npcName = "Helena Cowboy da Silva"
 npcAge = 26
 npcSex = 1
 NPCTexture = ExtResource("1_qyb4s")
-dialog = ["Hello, I came to kill the sheriff's wife.", "Here are my documents."]
+dialog = ["Hello, I'm Helena, I came to kill the sheriff's wife.", "Here are my documents."]
 documents = [ExtResource("2_qyb4s")]
 metadata/_custom_type_script = "uid://cx857svlxoj7x"
